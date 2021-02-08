@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using SignYourYard.Inventory;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,6 +12,6 @@ namespace SignYourYard.DataContext
         public DataContext(DbContextOptions<DataContext> options) : base(options)
         {
         }
-        public DbSet<Merchandise> merchandise{ get; set; }
+        public DbSet<Sign> sign{ get; set; }
     }
 }
