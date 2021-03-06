@@ -12,21 +12,29 @@ import {BrowserRouter as Router,
 
 function App() {
 
+  const [user, setUser] = useState({home: true})
+
+  const leaveHome = () => {
+    setUser({home: false})
+  }
+
+  const backHome = () => {
+    setUser({home: true})
+  }
+
   return (
     <Router>
       <div className="App">
-        <ul>
-          <div className="inner">
-            <li>
-              <Link to="/">Home</Link>
+        <ul className="list">
+            <li className="inner">
+              {(user.home === false) ? (<Link onClick={() => backHome()} to="/">Home</Link>) : ""}
             </li>
-            <li>
-              <Link to="/loginform">Login</Link>
+            <li className="inner">
+              {(user.home === true) ? (<Link onClick={() => leaveHome()} to="/loginform">Login</Link>) : ""}
             </li>
-            <li>
-              <Link to="/information">Information</Link>
+            <li className="inner">
+              {(user.home === true) ? (<Link onClick={() => leaveHome()} to="/information">Information</Link>) : ""}
             </li>
-          </div>
         </ul>
         <Switch>
           <Route path="/" exact component={Home} />

@@ -35,7 +35,9 @@ function Loginform() {
     }
 
     return (
+        
         <form onSubmit={submitHandler}>
+        <div className="bkgrd">
             <div className= "form-inner">
                 <h2>Login:</h2>
                 {(error != "") ? ( <div className="error">{error}</div>) : ""}
@@ -49,6 +51,7 @@ function Loginform() {
                 </div>
                 <input type="submit" value="Login"/>
                  </div>
+        </div>
         </form>
     )
 }

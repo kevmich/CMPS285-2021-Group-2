@@ -1,9 +1,13 @@
+/*App*/
+
 *{
   margin: 0;
-  padding: 0;
+  padding: 10px;
   box-sizing: border-box;
-  font-family: montserrat, sans-sarif;
+  
 }
+
+/* font-family: montserrat, sans-sarif; */
 
 input, button {
   appearance: none;
@@ -12,43 +16,46 @@ input, button {
   outline: none;
 }
 
-.App{
+.App:after {
   height: 100vh;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: rgb(170, 164, 164);
+  align-items:center;
+  justify-content: space-evenly;
+  background-image: linear-gradient(to bottom right, rgb(224, 195, 31), rgb(32, 15, 190));
 }
 
-.App .inner{
-  background-color: white;
+.App .list {
+  border-radius: 5px;
+  list-style: none;
+  background-color: rgb(214, 214, 214);
 }
 
-.Introbutton {
-  align-items: center;
-  justify-content: center;
-  padding-top: 20px;
+/* Home Page */
+
+.home h1{
+  font-family: 'Clicker Script', cursive;
 }
 
-.Introbutton button {
-  display: inline-block;
-  align-items: center;
-  justify-content: center;
-  display: list-item;
-  padding: 10px 15px;
-  border-radius: 8px;
-  background-image: linear-gradient(to right, gold,rgb(245, 184, 18), rgb(32, 15, 190));
-  background-size: 200%;
-  background-position: 0%;
-  transition: 0.5s;
-  color: rgb(32, 15, 190);
-  font-weight: 700;
-  cursor: pointer;
+/* Information page */
+
+.info {
+  background-color: rgb(228, 227, 227);
+  
 }
 
-.Introbutton button:hover {
-  background-position: 100% 0%;
+.info:after {
+  display: block;
+  position: absolute;
+  top: -5px;
+  bottom: -5px;
+  left: -5px;
+  right: -5px;
+  background-image: linear-gradient(to bottom right, rgb(224, 195, 31), rgb(32, 15, 190));
 }
+
+/* Login Form*/
+
+
 
 form .form-inner .notAdmin label{
   color: rgb(32, 15, 190);
@@ -66,10 +73,10 @@ form:after {
   content: '';
   display: block;
   position: absolute;
-  top: -5px;
-  bottom: -5px;
-  left: -5px;
-  right: -5px;
+  top: 10px;
+  bottom: 10px;
+  left: 10px;
+  right: 10px;
   z-index: 1;
   background-image: linear-gradient(to bottom right, rgb(224, 195, 31), rgb(32, 15, 190));
 }
@@ -124,11 +131,11 @@ form .form-inner input[type="submit"] {
   display: inline-block;
   padding: 10px 15px;
   border-radius: 8px;
-  background-image: linear-gradient(to right, rgb(224, 195, 31),rgb(224, 195, 31), rgb(32, 15, 190));
+  background-image: linear-gradient(to right, rgb(32, 15, 190),rgb(32, 15, 190), rgb(224, 195, 31));
   background-size: 200%;
   background-position: 0%;
   transition: 0.4s;
-  color: rgb(32, 15, 190);
+  color: white;
   font-weight: 700;
   cursor: pointer;
 }
@@ -137,18 +144,7 @@ form .form-inner input[type="submit"]:hover {
   background-position: 100% 0%;
 }
 
-.welcome {
-  width: 100%;
-  max-width: 480px;
-  background-color: white;
-  padding: 15px 30px;
-}
-.welcome h2 {
-  color: rgb(32, 15, 190);
-  font-size: 28px;
-  font-weight: 500;
-  margin-bottom: 30px;
-}
+/* Inventory Page*/
 
 .Inventory{
   height: 100vh;
@@ -164,7 +160,7 @@ form .form-inner input[type="submit"]:hover {
   border-style: solid;
   border-radius: 10px;
   border-color: rgb(032, 15, 190);
-  height: 900px;
+  min-height: 900px;
   display: flex;
   flex-direction: column;
   align-items: center;

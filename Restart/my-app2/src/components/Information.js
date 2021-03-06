@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 
 function Information(){
     return(
-    <div>
+    <div className="info">
         <h1>Sign Your Yard</h1>
         <h3>Who we are:</h3>
         <p>Sign Your Yard is a yard sign company for any occasion. We</p>
