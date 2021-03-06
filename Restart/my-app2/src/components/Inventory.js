@@ -1,11 +1,17 @@
-import React,{Component} from 'react';
+import React from 'react';
 import Counter from "./Counter";
-import './App.css';
+import { useHistory } from 'react-router-dom';
 
-class App extends Component {
-  render() {
+function Inventory(){
+
+  let history = useHistory();
+
+  const Logout = () => {
+      history.push('/');
+  }
     return(
       <div className = "App">
+        <button onClick={() => Logout()}>Logout?</button>
         <div className = "counters">
           <h1>Inventory management</h1>
             <div className = "counterSize">
@@ -26,6 +32,5 @@ class App extends Component {
       </div>
     );
   }
-}
 
-export default App;
+export default Inventory;

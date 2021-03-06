@@ -1,0 +1,172 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: montserrat, sans-sarif;
+}
+
+input, button {
+  appearance: none;
+  background: none;
+  border: none;
+  outline: none;
+}
+
+.App{
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(170, 164, 164);
+}
+
+.App .inner{
+  background-color: white;
+}
+
+.Introbutton {
+  align-items: center;
+  justify-content: center;
+  padding-top: 20px;
+}
+
+.Introbutton button {
+  display: inline-block;
+  align-items: center;
+  justify-content: center;
+  display: list-item;
+  padding: 10px 15px;
+  border-radius: 8px;
+  background-image: linear-gradient(to right, gold,rgb(245, 184, 18), rgb(32, 15, 190));
+  background-size: 200%;
+  background-position: 0%;
+  transition: 0.5s;
+  color: rgb(32, 15, 190);
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.Introbutton button:hover {
+  background-position: 100% 0%;
+}
+
+form .form-inner .notAdmin label{
+  color: rgb(32, 15, 190);
+  font-size: 28px;
+  font-weight: 500;
+  margin-bottom: 30px;
+}
+
+form {
+  display: block;
+  position: relative;
+}
+
+form:after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: -5px;
+  bottom: -5px;
+  left: -5px;
+  right: -5px;
+  z-index: 1;
+  background-image: linear-gradient(to bottom right, rgb(224, 195, 31), rgb(32, 15, 190));
+}
+
+form .form-inner {
+  position: relative;
+  display: block;
+  background-color: rgb(214, 214, 214);
+  padding: 100px;
+  z-index: 2;
+}
+
+form .form-inner h2{
+  color: rgb(32, 15, 190);
+  font-size: 28px;
+  font-weight: 500;
+  margin-bottom: 30px;
+}
+
+form .form-inner .form-group{
+  display: block;
+  width: 300px;
+  margin-bottom: 15px;
+}
+
+.form-inner .form-group label{
+  display: block;
+  color: rgb(155, 133, 9);
+  font-size: 12px;
+  margin-bottom: 5px;
+  transition: 0.5s;
+}
+
+.form-inner .form-group:focus-within label{
+  color: rgb(32, 15, 190);
+}
+
+form .form-inner .form-group input {
+  display:  block;
+  width: 100%;
+  padding: 10px 15px;
+  background-color: rgb(192, 192, 192);
+  border-radius: 8px;
+  transition: 0.5s;
+}
+
+form .form-inner .form-group input:focus {
+  box-shadow: 0px 0px 3px black;
+}
+
+form .form-inner input[type="submit"] {
+  display: inline-block;
+  padding: 10px 15px;
+  border-radius: 8px;
+  background-image: linear-gradient(to right, rgb(224, 195, 31),rgb(224, 195, 31), rgb(32, 15, 190));
+  background-size: 200%;
+  background-position: 0%;
+  transition: 0.4s;
+  color: rgb(32, 15, 190);
+  font-weight: 700;
+  cursor: pointer;
+}
+
+form .form-inner input[type="submit"]:hover {
+  background-position: 100% 0%;
+}
+
+.welcome {
+  width: 100%;
+  max-width: 480px;
+  background-color: white;
+  padding: 15px 30px;
+}
+.welcome h2 {
+  color: rgb(32, 15, 190);
+  font-size: 28px;
+  font-weight: 500;
+  margin-bottom: 30px;
+}
+
+.Inventory{
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: rgb(032, 15, 190);
+  justify-content: center;
+}
+
+.counters{
+  background: goldenrod;
+  border-style: solid;
+  border-radius: 10px;
+  border-color: rgb(032, 15, 190);
+  height: 900px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}

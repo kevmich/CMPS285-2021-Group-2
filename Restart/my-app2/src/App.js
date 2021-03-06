@@ -3,7 +3,7 @@ import React, {useState} from 'react';
 import Loginform from "./components/Loginform";
 import Information from './components/Information';
 import Home from "./components/Home";
-import Inv from "./components/Inv";
+import Inventory from "./components/Inventory";
 import {BrowserRouter as Router,
   Switch,
   Route,
@@ -11,41 +11,6 @@ import {BrowserRouter as Router,
 } from "react-router-dom";
 
 function App() {
-  const adminUser = {
-    email: "admin@admin.com",
-    password: "admin123"
-    }
-  
-
-  const [user, setUser] = useState({email: ""});
-
-  const [error, setError] = useState("");
-
-  const Login = details => {
-
-    if (details.email == adminUser.email && details.password == adminUser.password){
-      console.log("Logged in");
-      setUser({email: details.email});
-      } else { 
-        setError("Details do not match!")
-    }
-  }
-
-  const Logout = () => {
-    setGuest({master: false, info: false})
-    }
-
-    const [guest, setGuest] = useState({info: false, master: false})
-
-  const wantInfo = User => {
-    console.log("wantInfo")
-        setGuest({info: true})
-  }
-
-  const wantMaster = User => {
-    console.log("wantMaster")
-        setGuest({master: true})
-  }
 
   return (
     <Router>
@@ -67,7 +32,7 @@ function App() {
           <Route path="/" exact component={Home} />
           <Route path="/loginForm" component={Loginform}/>
           <Route path="/information" component={Information}/>
-          <Route path="/inv" component={Inv}/>
+          <Route path="/inventory" component={Inventory}/>
         </Switch>
       </div>
     </Router>

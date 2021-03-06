@@ -20,7 +20,7 @@ function Loginform() {
         if (details.email == adminUser.email && details.password == adminUser.password){
           console.log("Logged in");
           setUser({email: details.email});
-          history.push('/Inv');
+          history.push('/Inventory');
           } else { 
             setError("Details do not match!")
         }
