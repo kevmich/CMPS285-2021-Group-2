@@ -1,0 +1,58 @@
+<button onClick={p => setInfo({...Info, info: p.target.value})} value ={Info.info}>Click Here!</button>
+conditional redering on login
+
+link- href around button- navbar!
+<Link to exact path = {'/pathNameHere'}></Link>
+
+history- 
+(history.push/home)
+
+define in App: switch- predefine url *path
+
+
+    const [Bool, setInfo] = useState({info: false})
+
+    const infoHandler = j => {
+        wantInfo(Bool)
+        console.log("infoHandler" + Bool.info)
+    }
+
+
+    <div className="notAdmin">
+         <label htmlFor="notAdmin">Looking for Information?</label>
+         <button onClick={j => setInfo({...Bool, info: false})}>Click Here!</button>
+    </div>
+
+    <Switch>
+    <Route exact path="/" component={HomePage} />
+    <Route exact path="/LoginForm" component={() => <LoginForm function={toggleSetUpdate}/>} />
+    <Route exact path="/Inventory" component={() => <Inventory user={userObj}/>} />
+    <Route exact path="/Information" component={() => <Information user={userObj}/>}  />
+    <Route exact path="/" component={HomePage} />
+
+    <div className="App">
+      {
+      (guest.info != true && guest.master != true) ? (
+        <div>
+          <label htmlFor="intro">Welcome to Sign Your Yard!</label>
+          <label htmlFor="question">Master Login?</label>
+          <div className="Introbutton">
+            <button onClick={() => setUser(wantMaster())}>Click Here!</button>
+          </div>
+          <label htmlFor="question">Want more info?</label>
+          <div className="Introbutton">
+            <button onClick={() => setUser(wantInfo())}>Click Here!</button>
+          </div>
+        </div>
+      ) : (
+      (guest.master != true) ? (
+        <div className="Welcome">
+          <Introscreen/>
+          <button onClick={Logout}>Logout</button>
+        </div>
+      ) : (
+        (user.email == "") ? (
+      <Loginform Login={Login} error={error}/>
+      ) : ("")
+      ))}
+    </div>
