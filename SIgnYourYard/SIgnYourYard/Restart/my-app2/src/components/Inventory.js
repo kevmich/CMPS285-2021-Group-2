@@ -1,17 +1,9 @@
 import React from 'react';
 import Counter from "./Counter";
-import { useHistory } from 'react-router-dom';
 
 function Inventory(){
-
-  let history = useHistory();
-
-  const Logout = () => {
-      history.push('/');
-  }
     return(
       <div className = "App">
-        <button onClick={() => Logout()}>Logout?</button>
         <div className = "counters">
           <h1>Inventory management</h1>
             <div className = "counterSize">

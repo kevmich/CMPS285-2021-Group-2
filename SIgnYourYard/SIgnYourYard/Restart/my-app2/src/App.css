@@ -1,12 +1,5 @@
 /*App*/
 
-*{
-  margin: 0;
-  padding: 10px;
-  box-sizing: border-box;
-  
-}
-
 /* font-family: montserrat, sans-sarif; */
 
 input, button {
@@ -16,81 +9,66 @@ input, button {
   outline: none;
 }
 
-.App:after {
-  height: 100vh;
+/* Navbar */
+
+nav {
+  border-radius: 4px;
+  background: rgb(89, 94, 98);
   display: flex;
-  align-items:center;
-  justify-content: space-evenly;
-  background-image: linear-gradient(to bottom right, rgb(224, 195, 31), rgb(32, 15, 190));
+  min-height: 10vh;
+  color: white;
+  align-items: center;
+  justify-content: space-around;
 }
 
-.App .list {
-  border-radius: 5px;
+.navlinks {
+  width: 50%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
   list-style: none;
-  background-color: rgb(214, 214, 214);
 }
-
+ 
 /* Home Page */
 
 .home h1{
   font-family: 'Clicker Script', cursive;
 }
 
-/* Information page */
+/* General Information page */
 
-.info {
-  background-color: rgb(228, 227, 227);
-  
+.buffer{
+  background-color: rgb(206, 206, 206);
+  padding: 20px;
+  border: rgb(206, 206, 206);
+  border-radius: 4px;
 }
 
-.info:after {
-  display: block;
-  position: absolute;
-  top: -5px;
-  bottom: -5px;
-  left: -5px;
-  right: -5px;
+.gradient{
   background-image: linear-gradient(to bottom right, rgb(224, 195, 31), rgb(32, 15, 190));
+  position: relative;
+  display: block;
+  padding: 10px;
+  border-radius: 4px;
+  top: 50px;
 }
 
 /* Login Form*/
-
-
-
-form .form-inner .notAdmin label{
-  color: rgb(32, 15, 190);
-  font-size: 28px;
-  font-weight: 500;
-  margin-bottom: 30px;
-}
 
 form {
   display: block;
   position: relative;
 }
 
-form:after {
-  content: '';
-  display: block;
-  position: absolute;
-  top: 10px;
-  bottom: 10px;
-  left: 10px;
-  right: 10px;
-  z-index: 1;
-  background-image: linear-gradient(to bottom right, rgb(224, 195, 31), rgb(32, 15, 190));
-}
-
 form .form-inner {
   position: relative;
   display: block;
-  background-color: rgb(214, 214, 214);
-  padding: 100px;
+  padding: 150px;
   z-index: 2;
 }
 
 form .form-inner h2{
-  color: rgb(32, 15, 190);
+  color: rgb(0, 0, 0);
   font-size: 28px;
   font-weight: 500;
   margin-bottom: 30px;
@@ -104,7 +82,7 @@ form .form-inner .form-group{
 
 .form-inner .form-group label{
   display: block;
-  color: rgb(155, 133, 9);
+  color: rgb(0, 0, 0);
   font-size: 12px;
   margin-bottom: 5px;
   transition: 0.5s;
