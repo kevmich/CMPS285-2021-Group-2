@@ -58,29 +58,3 @@ define in App: switch- predefine url *path
     </div>
 
   app.js before navbar
-
-<ul className="navbar">
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            {(loggedIn.login === false) ? (<Link to="/information">About us</Link>) : ""}
-          </li>
-          <li>
-            {(loggedIn.login === false) ? (<Link to="/paymentinfo">Payment and Location</Link>) : ""}
-          </li>
-          <li>
-            {(loggedIn.login === false) ? (<Link to="/contactus">Contact us</Link>) : ""}
-          </li>
-          <li>
-            {(loggedIn.login === false) ? (<Link to="/loginform">Login</Link>) : ""}
-          </li>
-        </ul>
-        <Switch>
-          <Route path="/" exact component={Home} />
-          <Route path="/information" exact component={Information} />
-          <Route path="/paymentinfo" exact component={Paymentinfo} />
-          <Route path="/contactus" exact component={Contactus} />
-          <Route path="/loginform" exact component={Loginform} />
-          <Route path="/inventory" exact component={Inventory} />
-        </Switch>

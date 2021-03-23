@@ -7,6 +7,7 @@ import Contactus from './components/Contactus';
 import Paymentinfo from './components/Paymentinfo';
 import Inventory from './components/Inventory';
 import Navbar from './components/Navbar';
+import PurchaseHist from './components/PurchaseHist';
 import {BrowserRouter as Router,
   Switch,
   Route
@@ -31,6 +32,7 @@ function App() {
           <Route path="/loginform" component={Loginform}/>
           <Route path="/information" component={Information}/>
           <Route path="/inventory" component={Inventory}/>
+          <Route path="/purchasehist" component={PurchaseHist}/>
         </Switch>
       </div>
     </Router>

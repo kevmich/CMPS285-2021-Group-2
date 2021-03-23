@@ -13,10 +13,10 @@ input, button {
 
 nav {
   border-radius: 4px;
-  background: rgb(89, 94, 98);
+  background: rgb(111, 31, 216);
   display: flex;
   min-height: 10vh;
-  color: white;
+  color: rgb(224, 195, 31);
   align-items: center;
   justify-content: space-around;
 }
@@ -35,32 +35,52 @@ nav {
   font-family: 'Clicker Script', cursive;
 }
 
-/* General Information page */
+/* Page Layout */
 
 .buffer{
-  background-color: rgb(206, 206, 206);
+  background-color: rgb(230, 228, 228);
   padding: 20px;
-  border: rgb(206, 206, 206);
+  border: rgb(230, 228, 228);
   border-radius: 4px;
 }
 
 .gradient{
-  background-image: linear-gradient(to bottom right, rgb(224, 195, 31), rgb(32, 15, 190));
-  position: relative;
+  background-image: linear-gradient(to bottom right, rgb(224, 195, 31), rgb(111, 31, 216));
   display: block;
+  position: relative;
   padding: 10px;
   border-radius: 4px;
   top: 50px;
 }
 
-/* Login Form*/
+.label {
+  font-family: 'Clicker Script', cursive;
+  font-size: xx-large;
+  color: rgb(111, 31, 216);
+}
+
+.title {
+  font-family: 'Lora', serif;
+  color: rgb(235, 186, 26);
+  font-size: 30px;
+}
+
+.gold {
+  color:rgb(235, 186, 26);
+}
+
+.purple {
+  color: rgb(111, 31, 216);
+}
+
+/* Login Form */
 
 form {
   display: block;
   position: relative;
 }
 
-form .form-inner {
+.form-inner {
   position: relative;
   display: block;
   padding: 150px;
@@ -89,7 +109,7 @@ form .form-inner .form-group{
 }
 
 .form-inner .form-group:focus-within label{
-  color: rgb(32, 15, 190);
+  color: rgb(111, 31, 216);
 }
 
 form .form-inner .form-group input {
@@ -109,7 +129,7 @@ form .form-inner input[type="submit"] {
   display: inline-block;
   padding: 10px 15px;
   border-radius: 8px;
-  background-image: linear-gradient(to right, rgb(32, 15, 190),rgb(32, 15, 190), rgb(224, 195, 31));
+  background-image: linear-gradient(to right, rgb(111, 31, 216),rgb(111, 31, 216), rgb(224, 195, 31));
   background-size: 200%;
   background-position: 0%;
   transition: 0.4s;
@@ -122,25 +142,40 @@ form .form-inner input[type="submit"]:hover {
   background-position: 100% 0%;
 }
 
-/* Inventory Page*/
-
-.Inventory{
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  color: rgb(032, 15, 190);
-  justify-content: center;
-}
+/* Inventory Page */
 
 .counters{
-  background: goldenrod;
-  border-style: solid;
-  border-radius: 10px;
-  border-color: rgb(032, 15, 190);
-  min-height: 900px;
+  min-height: 400px;
   display: flex;
-  flex-direction: column;
+  justify-content: space-around;
+}
+
+.amount{
+  font-size: x-large;
+}
+
+/* Payment Info Page */
+
+.sidebyside {
+  display: flex;
+  justify-content: space-around;
+}
+
+.samecolor {
+  color:rgb(230, 228, 228)
+}
+
+/* Payment History Page */
+
+.ph {
+  display: block;
+  position: center;
   align-items: center;
-  justify-content: center;
+}
+
+.form-ph {
+  position: relative;
+  display: block;
+  padding: 10px;
+  z-index: 2;
 }

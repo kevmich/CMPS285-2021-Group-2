@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import { useHistory } from 'react-router-dom';
+import axios from 'axios';
 
 function Loginform() {
 
@@ -22,7 +23,7 @@ function Loginform() {
           setUser({email: details.email});
           history.push('/Inventory');
           } else {
-            setError("Details do not match!")
+            setError("Username or Password is not correct!")
         }
     }
 
@@ -39,7 +40,7 @@ function Loginform() {
         <form className="gradient" onSubmit={submitHandler}>
             <div className="buffer">
                 <div className= "form-inner">
-                    <h2>Login:</h2>
+                    <h1 className= "title">Login:</h1>
                     {(error != "") ? ( <div className="error">{error}</div>) : ""}
                     <div className="form-group">
                         <label htmlFor="email">Email:</label>

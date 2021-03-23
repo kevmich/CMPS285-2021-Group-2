@@ -4,24 +4,20 @@ import { useHistory } from 'react-router-dom';
 
 function Navbar() {
 
-    const navStyle = {
-        color: 'white'
-    };
-
     return (
         <nav>
-            <h3>Sign Your Yard</h3>
+            <h3 className= "gold">Sign Your Yard</h3>
             <ul className="navlinks">
-                <Link style={navStyle} to='/information'>
+                <Link className= "gold" to='/information'>
                     <li>General Info</li>
                 </Link>
-                <Link style={navStyle} to='/paymentinfo'>
+                <Link className= "gold" to='/paymentinfo'>
                     <li>Payment Info</li>
                 </Link>
-                <Link style={navStyle} to='/contactus'>
+                <Link className= "gold" to='/contactus'>
                     <li>Contact Us</li>
                 </Link>
-                <Link style={navStyle} to='/loginform'>
+                <Link className= "gold" to='/loginform'>
                     <li>Login</li>
                 </Link>
             </ul>

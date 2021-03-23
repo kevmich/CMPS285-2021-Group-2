@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Button } from 'react-bootstrap';
 
 class Counter extends Component {
     constructor(props) {
@@ -28,12 +29,10 @@ decrement = () => {
 
 render() {
     return(
-        <div>
-            <div className = "buttonWrapper">
-            <p>{this.state.count}</p>
-           <button onClick={this.increment}>+</button>
-           <button onClick={this.decrement}>-</button> 
-            </div>
+        <div className= "sidebyside">
+            <p className="amount">{this.state.count}</p>
+            <button onClick={this.increment}>+</button>
+            <button onClick={this.decrement}>-</button> 
         </div>
         );
     }
