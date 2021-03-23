@@ -2,8 +2,8 @@ import React, {useState} from 'react';
 
 function Information(){
     return(
-    <div className="gradient">
-        <div className="buffer">
+    <div>
+        <div>
             <a className= "title">Sign Your Yard</a>
             <h3 className= "label">Who we are:</h3>
             <p>Sign Your Yard is a yard sign company for any occasion. We</p>

@@ -5,26 +5,22 @@ import { useHistory } from 'react-router-dom';
 function Loginform() {
 
     let history = useHistory();
-
-    const adminUser = {
-        email: "admin@admin.com",
-        password: "admin123"
-        }
-      
     
     const [user, setUser] = useState({email: ""});
     
     const [error, setError] = useState("");
     
-    const Login = details => {
-    
-        if (details.email == adminUser.email && details.password == adminUser.password){
-          console.log("Logged in");
-          setUser({email: details.email});
-          history.push('/Inventory');
-          } else {
-            setError("Username or Password is not correct!")
-        }
+    const Login = details =>  {
+        axios.post('/api/auth/login', {
+            username: 'admin',
+            password: 'Password123!'
+          })
+          .then(function (response) {
+            console.log(response);
+          })
+          .catch(function (error) {
+            console.log(error);
+          });
     }
 
     const [details, setDetails] = useState({email: "", password: ""})
@@ -44,7 +40,7 @@ function Loginform() {
                     {(error != "") ? ( <div className="error">{error}</div>) : ""}
                     <div className="form-group">
                         <label htmlFor="email">Email:</label>
-                        <input type="email" name="email" id="email" onChange={e => setDetails({...details, email: e.target.value})} value ={details.name} />
+                        <input type="username" name="email" id="email" onChange={e => setDetails({...details, email: e.target.value})} value ={details.name} />
                     </div>
                     <div className="form-group">
                         <label htmlFor="password">Password:</label>
