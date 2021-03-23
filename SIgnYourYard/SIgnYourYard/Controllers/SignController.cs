@@ -24,7 +24,7 @@ namespace SignYourYard.Controllers
         }
 
         // Endpoint for adding a new sign to the database
-        [HttpPost]
+        [HttpPost("CreateSign")]
         //[Authorize(Roles = Roles.Admin)]
         public ActionResult<CreateSignDto> AddSign( CreateSignDto targetValue )
         {
@@ -40,7 +40,7 @@ namespace SignYourYard.Controllers
         }
 
         // Endpoint for editing a sign that already exists
-        [HttpPut]
+        [HttpPut("SignUpdate")]
         public ActionResult<UpdateSignDto> ChangeSign(int signId, UpdateSignDto targetValue)
         {
             var data = dataContext.Set<Sign>().FirstOrDefault(x => x.Id == signId);
