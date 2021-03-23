@@ -10,15 +10,15 @@ using SignYourYard.Data;
 namespace SignYourYard.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20210305035716_init")]
-    partial class init
+    [Migration("20210322215245_iit")]
+    partial class iit
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
-                .HasAnnotation("ProductVersion", "5.0.3")
+                .HasAnnotation("ProductVersion", "5.0.4")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<int>", b =>
@@ -258,13 +258,10 @@ namespace SignYourYard.Migrations
                     b.Property<string>("content")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTimeOffset>("deliveryTime")
-                        .HasColumnType("datetimeoffset");
-
                     b.Property<bool>("emoji")
                         .HasColumnType("bit");
 
-                    b.Property<int>("price")
+                    b.Property<int>("stock")
                         .HasColumnType("int");
 
                     b.HasKey("Id");

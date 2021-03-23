@@ -7,7 +7,7 @@ namespace SignYourYard.Features.DataTransferObjects
 {
     public class LoginDto
     {
-        public String username;
-        public String password;
+        public String username { get; set; }
+        public String password { get; set; }
     }
 }

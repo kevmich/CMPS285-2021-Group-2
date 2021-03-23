@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace SignYourYard.Migrations
 {
-    public partial class init : Migration
+    public partial class iit : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -71,8 +71,7 @@ namespace SignYourYard.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    price = table.Column<int>(type: "int", nullable: false),
-                    deliveryTime = table.Column<DateTimeOffset>(type: "datetimeoffset", nullable: false),
+                    stock = table.Column<int>(type: "int", nullable: false),
                     emoji = table.Column<bool>(type: "bit", nullable: false),
                     color = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     content = table.Column<string>(type: "nvarchar(max)", nullable: true)

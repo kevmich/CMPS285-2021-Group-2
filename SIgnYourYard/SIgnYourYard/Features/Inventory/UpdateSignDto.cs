@@ -5,11 +5,9 @@ using System.Threading.Tasks;
 
 namespace SignYourYard.Features.Inventory
 {
-    public class SignDto
+    public class UpdateSignDto
     {
-        public int Id { get; set; }
-        public int price { get; set; }
-        public DateTimeOffset deliveryTime { get; set; }
+        public int stock { get; set; }
         public bool emoji { get; set; }
         public String color { get; set; }
         public String content { get; set; }

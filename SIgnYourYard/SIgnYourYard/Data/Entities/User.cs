@@ -9,6 +9,6 @@ namespace SignYourYard.Data.Entities
     // Defines a user as being able to have roles
     public class User: IdentityUser<int>
     {
-        public virtual ICollection<UserRole> Roles { get; set; }
+        public virtual ICollection<UserRole> Roles { get; set; } = new List<UserRole>();
     }
 }

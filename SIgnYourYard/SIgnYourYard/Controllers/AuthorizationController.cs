@@ -33,7 +33,7 @@ namespace SignYourYard.Controllers
         // Login authentication
         // High volume of space magic, make sure to google more of this
         [HttpPost("login")]
-        [Authorize(Roles = Roles.Admin)]
+        // [Authorize(Roles = Roles.Admin)] 
         public async Task<ActionResult> LoginAsync(LoginDto dto)
         {
             var user = await userManager.FindByNameAsync(dto.username);
@@ -62,6 +62,7 @@ namespace SignYourYard.Controllers
         }
 
         [HttpPost("Create")]
+        [Authorize(Roles = Roles.Admin)]
         public async Task<ActionResult> Create(CreateUserDto dto)
         {
             var user = new User { UserName = dto.username };
