@@ -35,6 +35,11 @@ nav {
   font-family: 'Clicker Script', cursive;
 }
 
+.images{
+width: 200px;
+height: 200px;
+  }
+
 /* Page Layout */
 
 .buffer{
@@ -179,3 +184,4 @@ form .form-inner input[type="submit"]:hover {
   padding: 10px;
   z-index: 2;
 }
+
