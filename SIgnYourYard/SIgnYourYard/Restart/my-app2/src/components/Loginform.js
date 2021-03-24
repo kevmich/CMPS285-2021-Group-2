@@ -6,8 +6,6 @@ function Loginform() {
 
     let history = useHistory();
     
-    const [user, setUser] = useState({email: ""});
-    
     const [error, setError] = useState("");
     
     const Login = details =>  {
