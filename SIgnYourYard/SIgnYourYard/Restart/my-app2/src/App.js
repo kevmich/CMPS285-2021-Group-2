@@ -8,6 +8,7 @@ import Paymentinfo from './components/Paymentinfo';
 import Inventory from './components/Inventory';
 import Navbar from './components/Navbar';
 import PurchaseHist from './components/PurchaseHist';
+import PriceAdjust from './components/PriceAdjust';
 import {BrowserRouter as Router,
   Switch,
   Route
@@ -22,6 +23,8 @@ function App() {
   }
 
   return (
+    <div>
+      <div>
     <Router>
       <div className="App">
         <Navbar/>
@@ -33,9 +36,12 @@ function App() {
           <Route path="/information" component={Information}/>
           <Route path="/inventory" component={Inventory}/>
           <Route path="/purchasehist" component={PurchaseHist}/>
+          <Route path="/priceadjust" component={PriceAdjust}/>
         </Switch>
       </div>
     </Router>
+    </div>
+    </div>
     );
 }
   

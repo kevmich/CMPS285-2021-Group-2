@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 
 namespace SignYourYard.Controllers
 {
-    [Route("/api/auth")]
+    [Route("api/auth")]
     [ApiController]
 
     public class AuthorizationController : ControllerBase

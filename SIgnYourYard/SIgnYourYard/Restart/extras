@@ -58,3 +58,11 @@ define in App: switch- predefine url *path
     </div>
 
   app.js before navbar
+
+  if (details.email == adminUser.email && details.password == adminUser.password){
+          console.log("Logged in");
+          setUser({email: details.email});
+          history.push('/Inventory');
+          } else {
+            setError("Username or Password is not correct!")
+        }

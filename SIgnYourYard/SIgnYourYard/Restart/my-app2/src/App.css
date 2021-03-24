@@ -188,3 +188,22 @@ form .form-inner input[type="submit"]:hover {
   z-index: 2;
 }
 
+/* Price Adjustment Page */
+
+.priceIn input[type="submit"] {
+  display: inline-block;
+  padding: 10px 15px;
+  border-radius: 8px;
+  background-image: linear-gradient(to right, rgb(111, 31, 216),rgb(111, 31, 216), rgb(224, 195, 31));
+  background-size: 200%;
+  background-position: 0%;
+  transition: 0.4s;
+  color: white;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.priceIn input[type="submit"]:hover {
+  background-position: 100% 0%;
+}
+}
