@@ -1,15 +1,17 @@
 import React from 'react'
-import Yardsign1 from '../Yardsign1.jpg'
+
+import YardsignOne from '../YardsignOne.jpg'
 
 function Home() {
     return (
         <div className="gradient">
             <div className="buffer">
-                <div classname="home">
-                <h1 classname="home">Welcome to</h1>
-                <h1 classname="home">Sign Your Yard</h1>
-                </div>
-                <img src={Yardsign1}/>
+                    <div classname="home">
+                    <h1 classname="home">Welcome to</h1>
+                    <h1 classname="home">Sign Your Yard</h1>
+                    </div>
+               
+                <img alt="yard sign #3" className="images" src={YardsignOne}/>
             </div>
         </div>
     )

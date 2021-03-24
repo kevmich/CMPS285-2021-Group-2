@@ -36,8 +36,11 @@ nav {
 }
 
 .images{
-width: 200px;
-height: 200px;
+width: 325px;
+height: 325px;
+padding: 20px;
+border: black;
+border-radius: 50px;
   }
 
 /* Page Layout */
