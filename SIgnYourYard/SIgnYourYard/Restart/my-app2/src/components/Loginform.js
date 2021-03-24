@@ -9,7 +9,7 @@ function Loginform() {
     const [error, setError] = useState("");
     
     const Login = details =>  {
-        axios.post('/api/auth/login', {
+        axios.post('/api/auth', {
             username: 'admin',
             password: 'Password123!'
           })
