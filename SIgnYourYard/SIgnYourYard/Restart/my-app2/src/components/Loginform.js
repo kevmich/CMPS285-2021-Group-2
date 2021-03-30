@@ -9,16 +9,18 @@ function Loginform() {
     const [error, setError] = useState("");
     
     const Login = details =>  {
-        axios.post('/api/auth', {
+        axios.post('/api/auth/login', {
             username: 'admin',
             password: 'Password123!'
           })
           .then(function (response) {
             console.log(response);
+            history.push('/inventory')
           })
-          .catch(function (error) {
-            console.log(error);
+          .catch(function (err) {
+              console.log(err)
           });
+          console.log('Shane is the goat')
     }
 
     const [details, setDetails] = useState({email: "", password: ""})

@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Counter from "./Counter";
-
 import { useHistory } from 'react-router-dom';
+import axios from 'axios';
 
 function Inventory(){
 
@@ -10,6 +10,7 @@ function Inventory(){
     const hist = () => {
         history.push('/purchasehist');
     }
+
     return(
       <div className= "gradient">
         <div className= "buffer">
