@@ -15,6 +15,7 @@ using SignYourYard.Data;
 using Microsoft.OpenApi.Models;
 using SignYourYard.Data.Entities;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.SpaServices.ReactDevelopmentServer;
 
 namespace SIgnYourYard
 {
@@ -34,6 +35,11 @@ namespace SIgnYourYard
 
             services.AddDbContext<DataContext>(options=>
                 options.UseSqlServer(Configuration.GetConnectionString("DataContext")));
+
+            services.AddSpaStaticFiles(configuration =>
+            {
+                configuration.RootPath = "Restart/my-app2/build";
+            });
 
             services.AddIdentity<User, Role>()
                 .AddEntityFrameworkStores<DataContext>();
@@ -65,13 +71,27 @@ namespace SIgnYourYard
 
             app.UseHttpsRedirection();
 
+            app.UseStaticFiles();
+
             app.UseRouting();
+
+            app.UseSpaStaticFiles();
 
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
+            });
+
+            app.UseSpa(spa =>
+            {
+                spa.Options.SourcePath = "Restart/my-app2";
+
+                if (env.IsDevelopment())
+                {
+                    spa.UseReactDevelopmentServer(npmScript: "start");
+                }
             });
         }
 
