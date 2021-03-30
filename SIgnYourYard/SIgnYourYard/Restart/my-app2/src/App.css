@@ -31,23 +31,33 @@ nav {
  
 /* Home Page */
 
-.home h1{
-  font-family: 'Clicker Script', cursive;
-}
-
 .images{
   width: 325px;
   height: 325px;
-  padding: 4px;
   border-radius: 25px;
   position:relative;
-  background-image: linear-gradient(to bottom right, rgb(224, 195, 31), rgb(111, 31, 216));
 }
 
 /* Page Layout */
 
+.whitespace{
+  padding-top: 25px;
+  padding-left: 200px;
+  padding-right: 200px;
+}
+
+.infowhitespace{
+  padding-left: 200px;
+  padding-right: 200px;
+  padding-bottom: 50px;
+}
+
+.extend{
+  padding: 50px;
+}
+
 .buffer{
-  background-color: rgb(230, 228, 228);
+  background-color: rgb(233, 233, 233);
   padding: 20px;
   border: rgb(230, 228, 228);
   border-radius: 4px;
@@ -57,29 +67,31 @@ nav {
   background-image: linear-gradient(to bottom right, rgb(224, 195, 31), rgb(111, 31, 216));
   display: block;
   position: relative;
-  padding: 10px;
+  padding: 4px;
   border-radius: 4px;
   top: 50px;
 }
 
 .label {
-  font-family: 'Clicker Script', cursive;
-  font-size: xx-large;
+  font-family: 'Lora', serif;
+  font-size: x-large;
   color: rgb(111, 31, 216);
 }
 
 .title {
   font-family: 'Lora', serif;
-  color: rgb(206, 145, 5);
+  color: rgb(197, 153, 31);
   font-size: 30px;
 }
 
 .gold {
-  color:rgb(235, 186, 26);
+  color:rgb(197, 153, 31);
+  font-size: larger;
 }
 
 .purple {
   color: rgb(111, 31, 216);
+  font-size: larger;
 }
 
 /* Login Form */
@@ -175,7 +187,7 @@ form .form-inner input[type="submit"]:hover {
 }
 
 .samecolor {
-  color:rgb(230, 228, 228)
+  color:white
 }
 
 /* Payment History Page */
@@ -192,23 +204,3 @@ form .form-inner input[type="submit"]:hover {
   padding: 10px;
   z-index: 2;
 }
-
-/* Price Adjustment Page */
-
-.priceIn input[type="submit"] {
-  display: inline-block;
-  padding: 10px 15px;
-  border-radius: 8px;
-  background-image: linear-gradient(to right, rgb(111, 31, 216),rgb(111, 31, 216), rgb(224, 195, 31));
-  background-size: 200%;
-  background-position: 0%;
-  transition: 0.4s;
-  color: white;
-  font-weight: 700;
-  cursor: pointer;
-}
-
-.priceIn input[type="submit"]:hover {
-  background-position: 100% 0%;
-}
-

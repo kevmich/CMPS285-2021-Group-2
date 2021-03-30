@@ -34,24 +34,25 @@ function Loginform() {
     }
 
     return (
-        
-        <form className="gradient" onSubmit={submitHandler}>
-            <div className="buffer">
-                <div className= "form-inner">
-                    <h1 className= "title">Login:</h1>
-                    {(error != "") ? ( <div className="error">{error}</div>) : ""}
-                    <div className="form-group">
-                        <label htmlFor="email">Email:</label>
-                        <input type="email" name="email" id="email" onChange={e => setDetails({...details, email: e.target.value})} value ={details.name} />
+        <div className= "whitespace">
+            <form className="gradient" onSubmit={submitHandler}>
+                <div className="buffer">
+                    <div className= "form-inner">
+                        <h1 className= "title">Login:</h1>
+                        {(error != "") ? ( <div className="error">{error}</div>) : ""}
+                        <div className="form-group">
+                            <label htmlFor="email">Email:</label>
+                            <input type="email" name="email" id="email" onChange={e => setDetails({...details, email: e.target.value})} value ={details.name} />
+                        </div>
+                        <div className="form-group">
+                            <label htmlFor="password">Password:</label>
+                            <input type="password" name="password" id="password" onChange={e => setDetails({...details, password: e.target.value})} value ={details.password} />
+                        </div>
+                        <input type="submit" value="Login"/>
                     </div>
-                    <div className="form-group">
-                        <label htmlFor="password">Password:</label>
-                        <input type="password" name="password" id="password" onChange={e => setDetails({...details, password: e.target.value})} value ={details.password} />
-                    </div>
-                    <input type="submit" value="Login"/>
                 </div>
-            </div>
-        </form>
+            </form>
+        </div>
     )
 }
 
