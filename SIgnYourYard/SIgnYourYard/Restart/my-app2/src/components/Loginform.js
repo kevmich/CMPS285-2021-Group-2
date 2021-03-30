@@ -8,17 +8,19 @@ function Loginform() {
     
     const [error, setError] = useState("");
     
-    const Login = details =>  {
+    const Login = details => {
         axios.post('/api/auth/login', {
-            username: 'admin',
-            password: 'Password123!'
+            username: details.email,
+            password: details.password
           })
           .then(function (response) {
-            console.log(response);
+              console.log(response);
             history.push('/inventory')
           })
-          .catch(function (err) {
-              console.log(err)
+            .catch (err => {
+        if (err.response) {
+            setError('Email and/or Password is incorrect')
+        } 
           });
           console.log('Shane is the goat')
     }
@@ -40,7 +42,7 @@ function Loginform() {
                     {(error != "") ? ( <div className="error">{error}</div>) : ""}
                     <div className="form-group">
                         <label htmlFor="email">Email:</label>
-                        <input type="username" name="email" id="email" onChange={e => setDetails({...details, email: e.target.value})} value ={details.name} />
+                        <input type="email" name="email" id="email" onChange={e => setDetails({...details, email: e.target.value})} value ={details.name} />
                     </div>
                     <div className="form-group">
                         <label htmlFor="password">Password:</label>

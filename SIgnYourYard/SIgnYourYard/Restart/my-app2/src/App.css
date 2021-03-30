@@ -151,6 +151,10 @@ form .form-inner input[type="submit"]:hover {
   background-position: 100% 0%;
 }
 
+.error {
+    color: red;
+}
+
 /* Inventory Page */
 
 .counters{
