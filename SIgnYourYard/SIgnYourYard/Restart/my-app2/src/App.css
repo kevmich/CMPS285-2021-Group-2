@@ -32,9 +32,8 @@ nav {
 /* Home Page */
 
 .images{
-  width: 325px;
-  height: 325px;
-  border-radius: 25px;
+ width: 250px;
+ max-height: 250px;
   position:relative;
 }
 
