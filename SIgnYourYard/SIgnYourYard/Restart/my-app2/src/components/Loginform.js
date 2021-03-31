@@ -14,7 +14,7 @@ function Loginform() {
             password: details.password
           })
           .then(function (response) {
-              console.log(response);
+            console.log(response);
             history.push('/inventory')
           })
             .catch (err => {

@@ -11,6 +11,8 @@ function Inventory(){
         history.push('/purchasehist');
     }
 
+    const [test, setTest] = useState({tester: 0})
+
     return(
       <div className= "extend">
         <div>
