@@ -1,7 +1,9 @@
 ﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
 using SignYourYard.Data;
+using SignYourYard.Data.Entities;
 using SignYourYard.Features.Inventory;
 using SignYourYard.Inventory;
 using System;
@@ -17,45 +19,96 @@ namespace SignYourYard.Controllers
     public class SignController : ControllerBase
     {
         private readonly DataContext dataContext;
+        private readonly UserManager<User> userManager;
 
-        public SignController( DataContext dataContext)
+        public SignController( DataContext dataContext, UserManager<User> userManager)
         {
             this.dataContext = dataContext;
+            this.userManager = userManager;
         }
 
         // Endpoint for adding a new sign to the database
         [HttpPost("CreateSign")]
-        //[Authorize(Roles = Roles.Admin)]
         public ActionResult<CreateSignDto> AddSign( CreateSignDto targetValue )
         {
-            var data = dataContext.Set<Sign>().Add(new Sign
+            using (var transaction = dataContext.Database.BeginTransaction())
             {
-                emoji = targetValue.emoji,
-                color = targetValue.color,
-                content = targetValue.content,
-                stock = targetValue.stock
-            });
-            dataContext.SaveChanges();
-            return Created($"api/sign/{data.Entity.Id}", targetValue);
+                var data = dataContext.Set<Sign>().Add(new Sign
+                {
+                    emoji = targetValue.emoji,
+                    color = targetValue.color,
+                    content = targetValue.content,
+                    stock = targetValue.stock
+                });
+                dataContext.SaveChanges();
+                transaction.Commit();
+                return Created($"api/sign/{data.Entity.Id}", targetValue);
+            }
         }
 
         // Endpoint for editing a sign that already exists
+        //[Authorize]
         [HttpPut("SignUpdate")]
         public ActionResult<UpdateSignDto> ChangeSign(int signId, UpdateSignDto targetValue)
         {
-            var data = dataContext.Set<Sign>().FirstOrDefault(x => x.Id == signId);
+            using (var transaction = dataContext.Database.BeginTransaction())
             {
-                if (data == null)
+                var data = dataContext.Set<Sign>().FirstOrDefault(x => x.Id == signId);
+                {
+                    if (data == null)
+                    {
+                        return BadRequest("Sign does not exist");
+                    }
+                    data.emoji = targetValue.emoji;
+                    data.color = targetValue.color;
+                    data.content = targetValue.content;
+                    data.stock = targetValue.stock;
+                };
+            dataContext.SaveChanges();
+            transaction.Commit();
+            return Ok();
+            }
+        }
+
+        // Endpoint for getting sign info
+        //[Authorize]
+        [HttpGet("GetSignStock")]
+        public ActionResult<SignStockDto> GetSignStock( int signId )
+        {
+            using (var transaction = dataContext.Database.BeginTransaction())
+            {
+
+                var data = dataContext.Set<Sign>().FirstOrDefault(x => x.Id == signId);
+                {
+                    if (data == null)
+                    {
+                        return BadRequest("Sign does not exist");
+                    }
+                    SignStockDto response = new SignStockDto();
+                    response.stock = data.stock;
+                    transaction.Commit();
+                    return Ok(response);
+                };
+
+            }
+        }
+
+        [HttpPut("UpdateSignStock")]
+        public ActionResult<SignStockDto> UpdateSignStockDto( int signId, SignStockDto targetValue)
+        {
+            using (var transaction = dataContext.Database.BeginTransaction())
+            {
+                var data = dataContext.Set<Sign>().FirstOrDefault(x => x.Id == signId);
+
+                if( data == null)
                 {
                     return BadRequest();
-                }
-                data.emoji = targetValue.emoji;
-                data.color = targetValue.color;
-                data.content = targetValue.content;
+                };
                 data.stock = targetValue.stock;
-            };
-            dataContext.SaveChanges();
-            return Ok();
+                dataContext.SaveChanges();
+                transaction.Commit();
+                return Ok();
+            }
         }
     }
 }
