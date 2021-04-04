@@ -15,32 +15,23 @@ import {BrowserRouter as Router,
 } from "react-router-dom";
 
 function App() {
-
-  const [loggedIn, setLogin] = useState({login: false})
-
-  const login = () => {
-    setLogin= ({login: true})
-  }
-
   return (
     <div>
-      <div>
-    <Router>
-      <div className="App">
-        <Navbar/>
-        <Switch>
-          <Route path="/" exact component={Home}/>
-          <Route path="/contactus" component={Contactus}/>
-          <Route path="/paymentinfo" component={Paymentinfo}/>
-          <Route path="/loginform" component={Loginform}/>
-          <Route path="/information" component={Information}/>
-          <Route path="/inventory" component={Inventory}/>
-          <Route path="/purchasehist" component={PurchaseHist}/>
-          <Route path="/priceadjust" component={PriceAdjust}/>
-        </Switch>
-      </div>
-    </Router>
-    </div>
+        <Router>
+          <div className="App">
+            <Navbar/>
+            <Switch>
+              <Route path="/" exact component={Home}/>
+              <Route path="/contactus" component={Contactus}/>
+              <Route path="/paymentinfo" component={Paymentinfo}/>
+              <Route path="/loginform" component={Loginform}/>
+              <Route path="/information" component={Information}/>
+              <Route path="/inventory" component={Inventory}/>
+              <Route path="/purchasehist" component={PurchaseHist}/>
+              <Route path="/priceadjust" component={PriceAdjust}/>
+            </Switch>
+          </div>
+        </Router>
     </div>
     );
 }

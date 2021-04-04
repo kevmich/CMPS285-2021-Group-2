@@ -11,7 +11,25 @@ function Inventory(){
         history.push('/purchasehist');
     }
 
-    const [test, setTest] = useState({tester: 0})
+    const countSetter = () => {
+        axios.get('/api/sign/GetSignStock', {
+            id:1
+        })
+        .then(function (response) {
+          console.log(response);
+        })}
+
+    const [signcount, setSigncount] = 
+      useState({
+      sign1: 0,
+      sign2: 0,
+      sign3: 0,
+      sign4: 0,
+      sign5: 0,
+      sign6: 0,
+      sign7: 0,
+      sign8: 0,
+      })
 
     return(
       <div className= "extend">
@@ -33,6 +51,7 @@ function Inventory(){
             <h3>_________________________________________</h3>
             <p>Purple signs</p>
           </div>
+          <button onClick = { () => countSetter()}>countsetter</button>
           <div>
             <Counter/>
             <Counter/>

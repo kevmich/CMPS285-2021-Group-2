@@ -30,7 +30,6 @@ decrement = () => {
 render() {
     return(
         <div className= "sidebyside">
-            <p className="amount">{this.state.count}</p>
             <button onClick={this.increment}>+</button>
             <button onClick={this.decrement}>-</button> 
         </div>
