@@ -1,40 +1,21 @@
 import React, { Component } from "react";
+import axios from 'axios'
 
 
-class Counter extends Component {
-    constructor(props) {
-    super(props);
-    this.state = {
-        count: 0 
-    };
-}
+function Counter() {
 
-increment = () => {
-    this.setState({
-        count: this.state.count + 1
-    });
-};
 
-decrement = () => {
-    if(this.state.count <= 0){
-        this.setState({
-            count: 0
-        });
-    }else {
-        this.setState({
-            count: this.state.count - 1
-        });
+
+
+
+    const decrement = () => {
+        axios.put('/api/sign/UpdateSignStock', {})
     }
-};
-
-render() {
-    return(
-        <div className= "sidebyside">
-            <button onClick={this.increment}>+</button>
-            <button onClick={this.decrement}>-</button> 
+    return (
+        <div className="sidebyside">
+            <button onClick={() => decrement()}>-</button>
         </div>
-        );
-    }
+    )
 }
 
 export default Counter;
