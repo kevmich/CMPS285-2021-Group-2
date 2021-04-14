@@ -13,7 +13,7 @@ input, button {
 
 nav {
   border-radius: 4px;
-  background: rgb(111, 31, 216);
+  background: rgb(100, 117, 129);
   display: flex;
   min-height: 10vh;
   color: rgb(224, 195, 31);
@@ -25,7 +25,6 @@ nav {
   width: 50%;
   display: flex;
   justify-content: space-around;
-  align-items: center;
   list-style: none;
 }
  
@@ -42,9 +41,21 @@ height: 200px;
 
 /* Page Layout */
 
+
+.margins{
+  margin-left: 200px;
+  margin-right: 200px;
+}
+
+.extend {
+  padding-top: 50px;
+  margin-left: 400px;
+  margin-right: 400px;
+  line-height: 30px;
+}
+
 .buffer{
   background-color: rgb(230, 228, 228);
-  padding: 20px;
   border: rgb(230, 228, 228);
   border-radius: 4px;
 }
@@ -53,21 +64,32 @@ height: 200px;
   background-image: linear-gradient(to bottom right, rgb(224, 195, 31), rgb(111, 31, 216));
   display: block;
   position: relative;
-  padding: 10px;
+  padding: 5px;
   border-radius: 4px;
   top: 50px;
+
 }
 
 .label {
-  font-family: 'Clicker Script', cursive;
-  font-size: xx-large;
+  font-family: 'Lato', sans-serif;
+  font-size: x-large;
   color: rgb(111, 31, 216);
+
 }
 
 .title {
-  font-family: 'Lora', serif;
+  font-family: 'Lato', sans-serif;
   color: rgb(235, 186, 26);
   font-size: 30px;
+  text-align: center;
+  text-decoration: underline;
+}
+
+.title1 {
+  font-family: 'Lato', sans-serif;
+  color: rgb(235, 186, 26);
+  font-size: 30px;
+  text-align: center;
 }
 
 .gold {
@@ -79,6 +101,26 @@ height: 200px;
 }
 
 /* Login Form */
+
+.logsamecolor {
+  color: rgb(230, 228, 228);
+}
+
+.logtitle {
+  font-family: 'Lato', sans-serif;
+  color: rgb(235, 186, 26);
+  font-size: 40px;
+  font-size: 40px;
+  text-align: center;
+  text-decoration: underline;
+}
+
+.whitespace {
+  width: 50%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto
+}
 
 form {
   display: block;
@@ -167,7 +209,15 @@ form .form-inner input[type="submit"]:hover {
 }
 
 .samecolor {
-  color:rgb(230, 228, 228)
+  color: rgb(255, 255, 255)
+}
+
+.infowhitespace {
+  padding-bottom: 100px;
+  width: 50%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto
 }
 
 /* Payment History Page */
@@ -183,6 +233,13 @@ form .form-inner input[type="submit"]:hover {
   display: block;
   padding: 10px;
   z-index: 2;
+}
+
+.buffer2{
+  background-color: rgb(216, 222, 222);
+  padding: 20px;
+  border: rgb(151, 153, 149);
+  border-radius: 4px;
 }
 
 /* Price Adjustment Page */
@@ -201,6 +258,33 @@ form .form-inner input[type="submit"]:hover {
 }
 
 .priceIn input[type="submit"]:hover {
-  background-position: 100% 0%;
+  background-position: 100% 0;
 }
 
+/* Contact Us Page */
+
+.social-container {
+  justify-content: center;
+padding: 20px 120px;
+}
+a.icon {
+margin: 0 1rem;
+  transition: transform 1s;
+  display: inline-block;
+}
+
+a.icon:hover {
+  transform: translateY(-2px);
+}
+
+a.fb {
+  color: blue;
+}
+
+a.insta {
+  padding-left: 3px;
+  padding-right: 3px;
+  border-radius: 4px;
+  background-image: linear-gradient(to top right, yellow, purple, mediumpurple);
+  color: white;
+}

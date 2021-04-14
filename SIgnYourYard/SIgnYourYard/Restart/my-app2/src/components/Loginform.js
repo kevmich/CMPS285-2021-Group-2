@@ -38,7 +38,8 @@ function Loginform() {
             <form className="gradient" onSubmit={submitHandler}>
                 <div className="buffer">
                     <div className= "form-inner">
-                        <h1 className= "title">Login:</h1>
+                        <h1 className= "logtitle">Login</h1>
+                        <p className="logsamecolor">l</p>
                         {(error != "") ? ( <div className="error">{error}</div>) : ""}
                         <div className="form-group">
                             <label htmlFor="email">Email:</label>
