@@ -110,9 +110,7 @@ height: 200px;
   font-family: 'Lato', sans-serif;
   color: rgb(235, 186, 26);
   font-size: 40px;
-  font-size: 40px;
   text-align: center;
-  text-decoration: underline;
 }
 
 .whitespace {
@@ -220,6 +218,10 @@ form .form-inner input[type="submit"]:hover {
   margin-right: auto
 }
 
+.buton {
+  right: 200px;
+}
+
 /* Payment History Page */
 
 .ph {
@@ -274,7 +276,7 @@ margin: 0 1rem;
 }
 
 a.icon:hover {
-  transform: translateY(-2px);
+  transform: translateY(-4px);
 }
 
 a.fb {
@@ -284,7 +286,7 @@ a.fb {
 a.insta {
   padding-left: 3px;
   padding-right: 3px;
-  border-radius: 4px;
+  border-radius: 6px;
   background-image: linear-gradient(to top right, yellow, purple, mediumpurple);
   color: white;
 }

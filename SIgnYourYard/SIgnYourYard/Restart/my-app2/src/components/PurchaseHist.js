@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { useHistory } from 'react-router-dom';
+import axios from "axios"
 
 function PurchaseHist() {
 
@@ -18,10 +19,23 @@ function PurchaseHist() {
     }
 
     const submitCustomer = customer => {
-
+        axios.post('/api', {
+            email: customer.email,
+            name: customer.name,
+            date: customer.date
+        })
+            .then(function (response) {
+                console.log(response);
+                checker()
+            })
     }
 
-    const [user, getUser] = useState({email: "", orders: 0, name: ""})
+    function checker(){
+        axios.get('api/')
+            .then(function (response) {
+                console.log(response)
+            })
+    }
 
     return (
         <div className= "whitespace">

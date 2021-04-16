@@ -22,7 +22,6 @@ function Loginform() {
             setError('Email and/or Password is incorrect')
         } 
           });
-          console.log('Shane is the goat')
     }
 
     const [details, setDetails] = useState({email: "", password: ""})

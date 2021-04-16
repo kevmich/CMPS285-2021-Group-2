@@ -1,231 +1,279 @@
-import React, { useState } from 'react';
+import React, { useState, Component } from 'react';
 import { useHistory } from 'react-router-dom';
 import axios from 'axios';
+import { Button } from 'reactstrap'
 
-function Inventory(){
+class Inventory extends Component{
 
-    const [sign1, setSign1] = useState(0)
-    const [sign2, setSign2] = useState(0)
-    const [sign3, setSign3] = useState(0)
-    const [sign4, setSign4] = useState(0)
-    const [sign5, setSign5] = useState(0)
-    const [sign6, setSign6] = useState(0)
+    constructor(props) {
+        super(props);
+        this.state = {
+            stock1: 0,
+            stock2: 0,
+            stock3: 0,
+            stock4: 0,
+            stock5: 0,
+            stock6: 0,
+        }
 
-    const increment1 = () => {
+    }
+
+    increment1 = () =>  {
         axios.put('/api/sign/UpdateSignStock?signId=1',
-            {stock: sign1 + 1,
+            {stock: this.state.stock1 + 1,
                 emoji: true,
                 color: 'red',
                 content: 'A'})
-            .then(function(response){
-        setSign1(sign1 + 1)
+            .then(response => {
+                this.signUpdate()
             })
     }
 
-    const increment2 = () => {
+    increment2 = () =>  {
          axios.put('/api/sign/UpdateSignStock?signId=2',
-            {stock: sign2 + 1,
+            {stock: this.state.stock2 + 1,
                 emoji: true,
                 color: 'red',
                 content: 'A'})
-             .then(function(response){
-                 setSign2(sign2 + 1)
+             .then(response => {
+                 this.signUpdate()
              })
     }
 
-    const increment3 = () => {
+    increment3 = () => {
         axios.put('/api/sign/UpdateSignStock?signId=3',
-            {stock: sign3 + 1,
+            {stock: this.state.stock3 + 1,
                 emoji: true,
                 color: 'red',
                 content: 'A'})
-            .then(function(response){
-                setSign3(sign3 + 1)
+            .then(response => {
+                this.signUpdate()
             })
     }
 
-    const increment4 = () => {
+    increment4 = () => {
         axios.put('/api/sign/UpdateSignStock?signId=4',
-            {stock: sign4 + 1,
+            {stock: this.state.stock4 + 1,
                 emoji: true,
                 color: 'red',
                 content: 'A'})
-            .then(function(response){
-                setSign4(sign4 + 1)
+            .then(response => {
+                this.signUpdate()
             })
     }
 
-    const increment5 = () => {
+    increment5 = () =>  {
         axios.put('/api/sign/UpdateSignStock?signId=5',
-            {stock: sign5 + 1,
+            {stock: this.state.stock5 + 1,
                 emoji: true,
                 color: 'red',
                 content: 'A'})
-            .then(function(response){
-                setSign5(sign5 + 1)
+            .then(response => {
+                this.signUpdate()
             })
     }
 
-    const increment6 = () => {
+    increment6 = () => {
        axios.put('/api/sign/UpdateSignStock?signId=6',
-           {stock: sign6 + 1,
+           {stock: this.state.stock6 + 1,
                emoji: true,
                color: 'red',
                content: 'A'})
-           .then(function(response){
-               setSign6(sign6 + 1)
+           .then(response => {
+               this.signUpdate()
            })
     }
 
 
 
-    const decrement1 = () => {
+    decrement1 = () => {
         axios.put('/api/sign/UpdateSignStock?signId=1',
-            {stock: sign1 - 1,
+            {stock: this.state.stock1 - 1,
                 emoji: true,
                 color: 'red',
                 content: 'A'})
-            .then(function(response){
-                setSign1(sign1 - 1)
+            .then(response => {
+                this.signUpdate()
             })
     }
 
-    const decrement2 = () => {
+    decrement2 = () => {
         axios.put('/api/sign/UpdateSignStock?signId=2',
-            {stock: sign2 - 1,
+            {stock: this.state.stock2 - 1,
                 emoji: true,
                 color: 'red',
                 content: 'A'})
-            .then(function(response){
-                setSign2(sign2 - 1)
+            .then(response => {
+                this.signUpdate()
             })
     }
 
-    const decrement3 = () => {
+    decrement3 = () => {
         axios.put('/api/sign/UpdateSignStock?signId=3',
-            {stock: sign3 - 1,
+            {stock: this.state.stock3 - 1,
                 emoji: true,
                 color: 'red',
                 content: 'A'})
-            .then(function(response){
-                setSign3(sign3 - 1)
+            .then(response => {
+                this.signUpdate()
             })
     }
 
-    const decrement4 = () => {
+    decrement4 = () => {
         axios.put('/api/sign/UpdateSignStock?signId=4',
-            {stock: sign4 - 1,
+            {stock: this.state.stock4 - 1,
                 emoji: true,
                 color: 'red',
                 content: 'A'})
-            .then(function(response){
-                setSign4(sign4 - 1)
+            .then(response => {
+                this.signUpdate()
             })
     }
 
-    const decrement5 = () => {
+    decrement5 = () => {
         axios.put('/api/sign/UpdateSignStock?signId=5',
-            {stock: sign5 - 1,
+            {stock: this.state.stock5 - 1,
                 emoji: true,
                 color: 'red',
                 content: 'A'})
-            .then(function(response){
-                setSign5(sign5 - 1)
+            .then(response => {
+                this.signUpdate()
             })
     }
 
-    const decrement6 = () => {
+    decrement6 = () => {
         axios.put('/api/sign/UpdateSignStock?signId=6',
-            {stock: sign6 - 1,
-                emoji: true,
-                color: 'red',
-                content: 'A'})
-            .then(function(response){
-                setSign6(sign6 - 1)
+            {stock: this.state.stock6 - 1,
+            emoji: true,
+            color: 'red',
+            content: 'A'})
+            .then(response => {
+                this.signUpdate()
             })
     }
 
+    signUpdate = () => {
+        axios.get('api/sign/GetSignStock?signId=1')
+            .then(response => {
+                this.setState({stock1: response.data.stock})
+            })
+        axios.get('api/sign/GetSignStock?signId=2')
+            .then(response => {
+                this.setState({stock2: response.data.stock})
 
+            })
+        axios.get('api/sign/GetSignStock?signId=3')
+            .then(response => {
+                this.setState({stock3: response.data.stock})
+            })
+        axios.get('api/sign/GetSignStock?signId=4')
+            .then(response => {
+                this.setState({stock4: response.data.stock})
+            })
+        axios.get('api/sign/GetSignStock?signId=5')
+            .then(response => {
+                this.setState({stock5: response.data.stock})
+            })
+        axios.get('api/sign/GetSignStock?signId=6')
+            .then(response => {
+                this.setState({stock6: response.data.stock})
+            })
+    }
 
-  async function Stock() {
-    await axios.get('api/sign/GetSignStock?signId=1')
-        .then(function (response) {
-            setSign1(response.data.stock)
-        })
-      await axios.get('api/sign/GetSignStock?signId=2')
-          .then(function (response) {
-              setSign2(response.data.stock)
+    componentDidMount() {
+        axios.get('api/sign/GetSignStock?signId=1')
+            .then(response => {
+                this.setState({stock1: response.data.stock})
+            })
+        axios.get('api/sign/GetSignStock?signId=2')
+          .then(response => {
+             this.setState({stock2: response.data.stock})
 
           })
-      await axios.get('api/sign/GetSignStock?signId=3')
-          .then(function (response) {
-              setSign3(response.data.stock)
+       axios.get('api/sign/GetSignStock?signId=3')
+          .then(response => {
+              this.setState({stock3: response.data.stock})
           })
-      await axios.get('api/sign/GetSignStock?signId=4')
-          .then(function (response) {
-              setSign4(response.data.stock)
+       axios.get('api/sign/GetSignStock?signId=4')
+          .then(response => {
+             this.setState({stock4: response.data.stock})
           })
-      await axios.get('api/sign/GetSignStock?signId=5')
-          .then(function (response) {
-              setSign5(response.data.stock)
+       axios.get('api/sign/GetSignStock?signId=5')
+          .then(response => {
+             this.setState({stock5: response.data.stock})
           })
-      await axios.get('api/sign/GetSignStock?signId=6')
-          .then(function (response) {
-              setSign6(response.data.stock)
+       axios.get('api/sign/GetSignStock?signId=6')
+          .then(response => {
+             this.setState({stock6: response.data.stock})
           })
   }
 
-  let history = useHistory();
+  //let history = useHistory();
 
-    const hist = () => {
-        history.push('/purchasehist');
-    }
-
+    //const hist = () => {
+    //    history.push('/purchasehist');
+   // }
+    render(){
     return(
-      <div className= "extend">
-        <div>
+      <div>
           <h1 className= "title">Inventory management</h1>
-          <h3 className= "label">In Stock:</h3>
-            <button onClick={() => Stock()}>Sign Update</button>
-        </div>
-        <div className= "counters">
           <div>
-            <p>Red signs</p>
-            <h3>_________________________________________</h3>
-            <p>Orange signs</p>
-            <h3>_________________________________________</h3>
-            <p>Yellow signs</p>
-            <h3>_________________________________________</h3>
-            <p>Green signs</p>
-            <h3>_________________________________________</h3>
-            <p>Blue signs</p>
-            <h3>_________________________________________</h3>
-            <p>Purple signs</p>
+              <p>Red signs</p>
+              {this.state.stock1}
           </div>
-            <div>
-                <div>{sign1}</div>
-                <button onClick={() => increment1()}>+</button>
-                <button onClick={() => decrement1()}>-</button>
-                <div>{sign2}</div>
-                <button onClick={() => increment2()}>+</button>
-                <button onClick={() => decrement2()}>-</button>
-                <div>{sign3}</div>
-                <button onClick={() => increment3()}>+</button>
-                <button onClick={() => decrement3()}>-</button>
-                <div>{sign4}</div>
-                <button onClick={() => increment4()}>+</button>
-                <button onClick={() => decrement4()}>-</button>
-                <div>{sign5}</div>
-                <button onClick={() => increment5()}>+</button>
-                <button onClick={() => decrement5()}>-</button>
-                <div>{sign6}</div>
-                <button onClick={() => increment6()}>+</button>
-                <button onClick={() => decrement6()}>-</button>
-            </div>
-        </div>
-        <button onClick = {hist}>Purchase History</button>
+              <div>
+                  <Button color="success" size="sm" onClick={this.increment1}>+</Button>
+                  <Button color="danger" size="sm" onClick={this.decrement1}>-</Button>
+              </div>
+          <div>
+            <h3>_________________________________________</h3>
+              <div>
+                  <p>Orange signs</p>
+                  {this.state.stock2}
+              </div>
+              <div>
+                  <Button color="success" size="sm" onClick={this.increment2}>+</Button>
+                  <Button color="danger" size="sm" onClick={this.decrement2}>-</Button>
+              </div>
+            <h3>_________________________________________</h3>
+              <div>
+                  <p>Yellow signs</p>
+                  {this.state.stock3}
+              </div>
+              <div>
+                  <Button color="success" size="sm" onClick={this.increment3}>+</Button>
+                  <Button color="danger" size="sm" onClick={this.decrement3}>-</Button>
+              </div>
+            <h3>_________________________________________</h3>
+              <div>
+                  <p>Green signs</p>
+                  {this.state.stock3}
+              </div>
+              <div>
+                  <Button color="success" size="sm" onClick={this.increment4}>+</Button>
+                  <Button color="danger" size="sm" onClick={this.decrement4}>-</Button>
+              </div>
+            <h3>_________________________________________</h3>
+              <div>
+                  <p>Blue signs</p>
+                  {this.state.stock3}
+              </div>
+              <div>
+                  <Button color="success" size="sm" onClick={this.increment5}>+</Button>
+                  <Button color="danger" size="sm" onClick={this.decrement5}>-</Button>
+              </div>
+            <h3>_________________________________________</h3>
+              <div>
+                  <p>Purple signs</p>
+                  {this.state.stock3}
+              </div>
+              <div>
+                  <Button color="success" size="sm" onClick={this.increment6}>+</Button>
+                  <Button color="danger" size="sm" onClick={this.decrement6}>-</Button>
+              </div>
+          </div>
       </div>
     );
-  }
+  }}
 
 export default Inventory;

@@ -18,13 +18,13 @@ function Contactus() {
             <h3 className= "label">Follow us on Social Media!</h3>
             <p>Click the icons to take you to our social media accounts:</p>
             <div className="social-container">
-            <a href="https://www.twitter.com" className="twitter icon">
+            <a href="https://www.twitter.com/signyouryard" className="twitter icon" target="_blank">
                 <FontAwesomeIcon icon={faTwitter} size="3x"/>
             </a>
-            <a href="https://www.instagram.com" className="insta icon">
+            <a href="https://www.instagram.com/signyouryard/" className="insta icon" target="_blank">
                 <FontAwesomeIcon icon={faInstagram} size="3x"/>
             </a>
-            <a href="https://www.facebook.com" className="fb icon">
+            <a href="https://www.facebook.com/Sign-Your-Yard-105081981193735/" className="fb icon" target="_blank">
                 <FontAwesomeIcon icon={faFacebook} size="3x"/>
             </a>
             </div>
