@@ -215,61 +215,65 @@ class Inventory extends Component{
    // }
     render(){
     return(
-      <div>
-          <h1 className= "title">Inventory management</h1>
-          <div>
-              <p>Red signs</p>
-              {this.state.stock1}
-          </div>
+      <div className= "padding">
+          <div className= "inventory">
+              <h1>Inventory management</h1>
               <div>
-                  <Button color="success" size="sm" onClick={this.increment1}>+</Button>
-                  <Button color="danger" size="sm" onClick={this.decrement1}>-</Button>
-              </div>
-          <div>
-            <h3>_________________________________________</h3>
-              <div>
-                  <p>Orange signs</p>
-                  {this.state.stock2}
-              </div>
-              <div>
-                  <Button color="success" size="sm" onClick={this.increment2}>+</Button>
-                  <Button color="danger" size="sm" onClick={this.decrement2}>-</Button>
-              </div>
-            <h3>_________________________________________</h3>
-              <div>
-                  <p>Yellow signs</p>
-                  {this.state.stock3}
-              </div>
-              <div>
-                  <Button color="success" size="sm" onClick={this.increment3}>+</Button>
-                  <Button color="danger" size="sm" onClick={this.decrement3}>-</Button>
-              </div>
-            <h3>_________________________________________</h3>
-              <div>
-                  <p>Green signs</p>
-                  {this.state.stock3}
-              </div>
-              <div>
-                  <Button color="success" size="sm" onClick={this.increment4}>+</Button>
-                  <Button color="danger" size="sm" onClick={this.decrement4}>-</Button>
-              </div>
-            <h3>_________________________________________</h3>
-              <div>
-                  <p>Blue signs</p>
-                  {this.state.stock3}
-              </div>
-              <div>
-                  <Button color="success" size="sm" onClick={this.increment5}>+</Button>
-                  <Button color="danger" size="sm" onClick={this.decrement5}>-</Button>
-              </div>
-            <h3>_________________________________________</h3>
-              <div>
-                  <p>Purple signs</p>
-                  {this.state.stock3}
-              </div>
-              <div>
-                  <Button color="success" size="sm" onClick={this.increment6}>+</Button>
-                  <Button color="danger" size="sm" onClick={this.decrement6}>-</Button>
+                  <div>
+                      <p>Red signs</p>
+                      {this.state.stock1}
+                  </div>
+                  <div>
+                      <Button color="success" size="sm" onClick={this.increment1}>+</Button>
+                      <Button color="danger" size="sm" onClick={this.decrement1}>-</Button>
+                  </div>
+                  <div>
+                      <h3>_________________________________________</h3>
+                      <div>
+                          <p>Orange signs</p>
+                          {this.state.stock2}
+                      </div>
+                      <div>
+                          <Button color="success" size="sm" onClick={this.increment2}>+</Button>
+                          <Button color="danger" size="sm" onClick={this.decrement2}>-</Button>
+                      </div>
+                      <h3>_________________________________________</h3>
+                      <div>
+                          <p>Yellow signs</p>
+                          {this.state.stock3}
+                      </div>
+                      <div>
+                          <Button color="success" size="sm" onClick={this.increment3}>+</Button>
+                          <Button color="danger" size="sm" onClick={this.decrement3}>-</Button>
+                      </div>
+                      <h3>_________________________________________</h3>
+                      <div>
+                          <p>Green signs</p>
+                          {this.state.stock4}
+                      </div>
+                      <div>
+                          <Button color="success" size="sm" onClick={this.increment4}>+</Button>
+                          <Button color="danger" size="sm" onClick={this.decrement4}>-</Button>
+                      </div>
+                      <h3>_________________________________________</h3>
+                      <div>
+                          <p>Blue signs</p>
+                          {this.state.stock5}
+                      </div>
+                      <div>
+                          <Button color="success" size="sm" onClick={this.increment5}>+</Button>
+                          <Button color="danger" size="sm" onClick={this.decrement5}>-</Button>
+                      </div>
+                      <h3>_________________________________________</h3>
+                      <div>
+                          <p>Purple signs</p>
+                          {this.state.stock6}
+                      </div>
+                      <div>
+                          <Button color="success" size="sm" onClick={this.increment6}>+</Button>
+                          <Button color="danger" size="sm" onClick={this.decrement6}>-</Button>
+                      </div>
+                  </div>
               </div>
           </div>
       </div>

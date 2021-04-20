@@ -1,5 +1,5 @@
 import './App.css';
-import React from 'react';
+import React, { useState } from 'react';
 import Information from './components/Information';
 import Loginform from './components/Loginform';
 import Home from './components/Home';
@@ -9,12 +9,15 @@ import Inventory from './components/Inventory';
 import Navbar from './components/Navbar';
 import PurchaseHist from './components/PurchaseHist';
 import PriceAdjust from './components/PriceAdjust';
+import AdminNav from './components/AdminNav';
 import {BrowserRouter as Router,
   Switch,
   Route
 } from "react-router-dom";
 
 function App() {
+
+
   return (
     <div>
         <Router>

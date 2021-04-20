@@ -189,14 +189,12 @@ form .form-inner input[type="submit"]:hover {
 
 /* Inventory Page */
 
-.counters{
-  min-height: 400px;
-  display: flex;
-  justify-content: space-around;
+.inventory {
+  text-align: center;
 }
 
-.amount{
-  font-size: x-large;
+.padding {
+  padding-top: 30px;
 }
 
 /* Payment Info Page */

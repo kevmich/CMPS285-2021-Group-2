@@ -6,8 +6,7 @@ function PaymentInfo() {
             <p className= "title">Payment</p>
             <p className="samecolor">l</p>
             <div className = "margins">
-            <p>*Payment is required at the time of booking your request in order to confirm and hold your</p>
-            <p>reservation*</p>
+            <p>*Payment is required at the time of booking your request in order to confirm and hold your reservation*</p>
             <h3 className= "label">Location:</h3>
             <p className="samecolor">l</p>
             <p>Sign Your yard serves many areas across Louisiana such as:</p>
