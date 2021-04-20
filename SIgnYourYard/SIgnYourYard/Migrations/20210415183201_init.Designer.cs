@@ -10,7 +10,7 @@ using SignYourYard.Data;
 namespace SignYourYard.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20210401011723_init")]
+    [Migration("20210415183201_init")]
     partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

@@ -33,10 +33,19 @@ namespace SignYourYard.Controllers
         {
             using (var transaction = dataContext.Database.BeginTransaction())
             {
+                string[] colorOptions = { "red", "green", "yellow", "blue", "black", "sparkly gold", "sparkly pink", "teal", "orange" };
+                String checkedColor = "";
+                for ( int i = 0; i< colorOptions.Length; i++)
+                {
+                    if (targetValue.color.ToLower().Equals(colorOptions[i]))
+                    {
+                        checkedColor = colorOptions[i];
+                    }
+                }
                 var data = dataContext.Set<Sign>().Add(new Sign
                 {
                     emoji = targetValue.emoji,
-                    color = targetValue.color,
+                    color = checkedColor,
                     content = targetValue.content,
                     stock = targetValue.stock
                 });
@@ -108,6 +117,38 @@ namespace SignYourYard.Controllers
                 dataContext.SaveChanges();
                 transaction.Commit();
                 return Ok();
+            }
+        }
+
+        [HttpGet("GetAllStock")]
+        public ActionResult<AllStockDto> SignStockDto()
+        {
+            using (var transaction = dataContext.Database.BeginTransaction())
+            {
+                int i = 1;
+                AllStockDto response = new AllStockDto();
+                var data = dataContext.Set<Sign>().FirstOrDefault(x => x.Id == i);
+
+                while( data != null)
+                {
+                    i++;
+                    data = dataContext.Set<Sign>().FirstOrDefault(x => x.Id == i);
+                }
+
+                int[] allStock = new int[i - 1];
+                i = 1;
+                data = dataContext.Set<Sign>().FirstOrDefault(x => x.Id == i);
+
+                while ( data != null)
+                {
+                    allStock[i - 1] = data.stock;
+                    i++;
+                    data = dataContext.Set<Sign>().FirstOrDefault(x => x.Id == i);
+                }
+
+                response.stock = allStock;
+                transaction.Commit();
+                return Ok(response);
             }
         }
     }

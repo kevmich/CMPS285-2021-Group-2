@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using SignYourYard.Data.Entities;
+using SignYourYard.Data.Inventory;
 using SignYourYard.Inventory;
 using System;
 using System.Collections.Generic;
@@ -17,6 +18,8 @@ namespace SignYourYard.Data
         }
         public DbSet<Sign> Sign{  get; set; }
         public DbSet<Order> Order { get; set; }
+        public DbSet<SalesPackage> SalesPackages { get; set; }
+
 
 
         // Creates the relationships between a User and a Role
