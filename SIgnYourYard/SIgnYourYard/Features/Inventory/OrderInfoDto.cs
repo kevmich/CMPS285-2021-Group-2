@@ -7,7 +7,7 @@ namespace SignYourYard.Features.Inventory
 {
     public class OrderInfoDto
     {
-       // public DateTimeOffset purchaseTime { get; set; }
+        public DateTimeOffset purchaseTime { get; set; }
         public String email { get; set; }
         public String address { get; set; }
     }
