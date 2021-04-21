@@ -5,8 +5,8 @@ using System.Threading.Tasks;
 
 namespace SignYourYard.Features.Inventory
 {
-    public class AllStockDto
+    public class CancelOrderDto
     {
-        public int[] stock { get; set; }
+        public int Id { get; set; }
     }
 }

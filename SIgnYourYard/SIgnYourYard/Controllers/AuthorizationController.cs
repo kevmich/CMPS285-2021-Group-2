@@ -32,7 +32,7 @@ namespace SignYourYard.Controllers
 
         // Login authentication
         // High volume of space magic, make sure to google more of this
-        [HttpPost("login")]
+        [HttpPost("/login")]
         // [Authorize(Roles = Roles.Admin)] 
         public async Task<ActionResult> LoginAsync(LoginDto dto)
         {

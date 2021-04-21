@@ -216,24 +216,6 @@ namespace SignYourYard.Migrations
                     b.ToTable("AspNetUserRoles");
                 });
 
-            modelBuilder.Entity("SignYourYard.Data.Inventory.SalesPackage", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("name")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<double>("price")
-                        .HasColumnType("float");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("SalesPackages");
-                });
-
             modelBuilder.Entity("SignYourYard.Inventory.Order", b =>
                 {
                     b.Property<int>("Id")

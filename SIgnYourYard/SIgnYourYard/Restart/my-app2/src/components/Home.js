@@ -1,23 +1,18 @@
 import React from 'react'
-import Carousel from './Carousel';
-
+import Yardsign1 from '../Yardsign1.jpg'
 
 function Home() {
     return (
-        <div className="extend">
-            <div className="home">
-                <p className= "title1">Welcome to </p>
-                <p className= "title">Sign Your Yard</p>
-                <p className="label">Gallery</p>
-                <div className= "pad">
-                        
-                       <Carousel className= "images"> 
-                       </Carousel>
-                    
+        <div className="gradient">
+            <div className="buffer">
+                <div classname="home">
+                <h1 classname="home">Welcome to</h1>
+                <h1 classname="home">Sign Your Yard</h1>
                 </div>
+                <img src={Yardsign1}/>
             </div>
         </div>
     )
 }
 
-export default Home;
+export default Home
