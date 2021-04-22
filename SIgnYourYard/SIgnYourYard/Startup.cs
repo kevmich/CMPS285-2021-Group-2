@@ -33,7 +33,7 @@ namespace SIgnYourYard
         {
             services.AddControllers();
 
-            services.AddDbContext<DataContext>(options =>
+            services.AddDbContext<DataContext>(options=>
                 options.UseSqlServer(Configuration.GetConnectionString("DataContext")));
 
             services.AddSpaStaticFiles(configuration =>
@@ -101,7 +101,7 @@ namespace SIgnYourYard
             using (var serviceScope = app.ApplicationServices.GetRequiredService<IServiceScopeFactory>().CreateScope())
             {
                 var roleManager = serviceScope.ServiceProvider.GetService<RoleManager<Role>>();
-                if (roleManager.Roles.Any())
+                if(roleManager .Roles.Any())
                 {
                     return;
                 }
@@ -111,7 +111,7 @@ namespace SIgnYourYard
         }
 
         // Method for adding a user to the database on startup
-        private static async Task AddUsers(IApplicationBuilder app)
+        private static async Task AddUsers( IApplicationBuilder app)
         {
             using (var serviceScope = app.ApplicationServices.GetRequiredService<IServiceScopeFactory>().CreateScope())
             {
@@ -126,7 +126,7 @@ namespace SIgnYourYard
         }
 
         // Method for creating a user to add to the database on startup
-        private static async Task CreateUser(UserManager<User> userManager, string username, string role)
+        private static async Task CreateUser( UserManager<User> userManager, string username, string role)
         {
             const string passwordForEveryone = "Password123!";
             var user = new User { UserName = username };

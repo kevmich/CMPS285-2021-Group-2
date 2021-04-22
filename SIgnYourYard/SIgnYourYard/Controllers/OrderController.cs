@@ -13,7 +13,7 @@ namespace SignYourYard.Controllers
     {
         private readonly DataContext dataContext;
 
-        public OrderController( DataContext dataContext)
+        public OrderController(DataContext dataContext)
         {
             this.dataContext = dataContext;
         }
@@ -26,7 +26,7 @@ namespace SignYourYard.Controllers
             var data = dataContext.Set<Order>().Add(new Order
             {
                 Id = targerValue.Id,
-               // purchaseTime = targerValue.purchaseTime,
+                // purchaseTime = targerValue.purchaseTime,
                 email = targerValue.email,
                 address = targerValue.address,
                 signs = targerValue.signs
@@ -47,7 +47,7 @@ namespace SignYourYard.Controllers
                     return BadRequest();
                 }
                 data.Id = targetValue.Id;
-               // data.purchaseTime = targetValue.purchaseTime;
+                data.purchaseTime = targetValue.purchaseTime;
                 data.email = targetValue.email;
                 data.address = targetValue.address;
                 data.signs = targetValue.signs;
@@ -69,7 +69,7 @@ namespace SignYourYard.Controllers
                         return BadRequest("No info found");
                     }
                     OrderInfoDto response = new OrderInfoDto();
-                   // response.purchaseTime = data.purchaseTime;
+                    response.purchaseTime = data.purchaseTime;
                     response.email = data.email;
                     response.address = data.address;
                     transaction.Commit();
@@ -84,9 +84,9 @@ namespace SignYourYard.Controllers
         {
             try
             {
-                var data = dataContext.GetOrder(Id);
+                var data = dataContext.CancelOrder(Id);
 
-                if(data == null)
+                if (data == null)
                 {
                     return BadRequest();
                 }
@@ -103,5 +103,6 @@ namespace SignYourYard.Controllers
         {
             throw new NotImplementedException();
         }
+
     }
 }

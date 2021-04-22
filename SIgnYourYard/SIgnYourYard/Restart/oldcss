@@ -13,7 +13,7 @@ input, button {
 
 nav {
   border-radius: 4px;
-  background: rgb(100, 117, 129);
+  background: rgb(111, 31, 216);
   display: flex;
   min-height: 10vh;
   color: rgb(224, 195, 31);
@@ -25,37 +25,40 @@ nav {
   width: 50%;
   display: flex;
   justify-content: space-around;
+  align-items: center;
   list-style: none;
 }
  
 /* Home Page */
 
-.home h1{
-  font-family: 'Clicker Script', cursive;
-}
-
 .images{
-width: 200px;
-height: 200px;
-  }
+  width: 325px;
+  height: 325px;
+  border-radius: 25px;
+  position:relative;
+}
 
 /* Page Layout */
 
-
-.margins{
-  margin-left: 200px;
-  margin-right: 200px;
+.whitespace{
+  padding-top: 25px;
+  padding-left: 200px;
+  padding-right: 200px;
 }
 
-.extend {
-  padding-top: 50px;
-  margin-left: 400px;
-  margin-right: 400px;
-  line-height: 30px;
+.infowhitespace{
+  padding-left: 200px;
+  padding-right: 200px;
+  padding-bottom: 50px;
+}
+
+.extend{
+  padding: 50px;
 }
 
 .buffer{
-  background-color: rgb(230, 228, 228);
+  background-color: rgb(233, 233, 233);
+  padding: 20px;
   border: rgb(230, 228, 228);
   border-radius: 4px;
 }
@@ -64,61 +67,34 @@ height: 200px;
   background-image: linear-gradient(to bottom right, rgb(224, 195, 31), rgb(111, 31, 216));
   display: block;
   position: relative;
-  padding: 5px;
+  padding: 4px;
   border-radius: 4px;
   top: 50px;
-
 }
 
 .label {
-  font-family: 'Lato', sans-serif;
+  font-family: 'Lora', serif;
   font-size: x-large;
   color: rgb(111, 31, 216);
-
 }
 
 .title {
-  font-family: 'Lato', sans-serif;
-  color: rgb(235, 186, 26);
+  font-family: 'Lora', serif;
+  color: rgb(197, 153, 31);
   font-size: 30px;
-  text-align: center;
-  text-decoration: underline;
-}
-
-.title1 {
-  font-family: 'Lato', sans-serif;
-  color: rgb(235, 186, 26);
-  font-size: 30px;
-  text-align: center;
 }
 
 .gold {
-  color:rgb(235, 186, 26);
+  color:rgb(197, 153, 31);
+  font-size: larger;
 }
 
 .purple {
   color: rgb(111, 31, 216);
+  font-size: larger;
 }
 
 /* Login Form */
-
-.logsamecolor {
-  color: rgb(230, 228, 228);
-}
-
-.logtitle {
-  font-family: 'Lato', sans-serif;
-  color: rgb(235, 186, 26);
-  font-size: 40px;
-  text-align: center;
-}
-
-.whitespace {
-  width: 50%;
-  display: block;
-  margin-left: auto;
-  margin-right: auto
-}
 
 form {
   display: block;
@@ -187,14 +163,20 @@ form .form-inner input[type="submit"]:hover {
   background-position: 100% 0%;
 }
 
-/* Inventory Page */
-
-.inventory {
-  text-align: center;
+.error {
+    color: red;
 }
 
-.padding {
-  padding-top: 30px;
+/* Inventory Page */
+
+.counters{
+  min-height: 400px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.amount{
+  font-size: x-large;
 }
 
 /* Payment Info Page */
@@ -205,19 +187,7 @@ form .form-inner input[type="submit"]:hover {
 }
 
 .samecolor {
-  color: rgb(255, 255, 255)
-}
-
-.infowhitespace {
-  padding-bottom: 100px;
-  width: 50%;
-  display: block;
-  margin-left: auto;
-  margin-right: auto
-}
-
-.buton {
-  right: 200px;
+  color:white
 }
 
 /* Payment History Page */
@@ -233,58 +203,4 @@ form .form-inner input[type="submit"]:hover {
   display: block;
   padding: 10px;
   z-index: 2;
-}
-
-.buffer2{
-  background-color: rgb(216, 222, 222);
-  padding: 20px;
-  border: rgb(151, 153, 149);
-  border-radius: 4px;
-}
-
-/* Price Adjustment Page */
-
-.priceIn input[type="submit"] {
-  display: inline-block;
-  padding: 10px 15px;
-  border-radius: 8px;
-  background-image: linear-gradient(to right, rgb(111, 31, 216),rgb(111, 31, 216), rgb(224, 195, 31));
-  background-size: 200%;
-  background-position: 0%;
-  transition: 0.4s;
-  color: white;
-  font-weight: 700;
-  cursor: pointer;
-}
-
-.priceIn input[type="submit"]:hover {
-  background-position: 100% 0;
-}
-
-/* Contact Us Page */
-
-.social-container {
-  justify-content: center;
-padding: 20px 120px;
-}
-a.icon {
-margin: 0 1rem;
-  transition: transform 1s;
-  display: inline-block;
-}
-
-a.icon:hover {
-  transform: translateY(-4px);
-}
-
-a.fb {
-  color: blue;
-}
-
-a.insta {
-  padding-left: 3px;
-  padding-right: 3px;
-  border-radius: 6px;
-  background-image: linear-gradient(to top right, yellow, purple, mediumpurple);
-  color: white;
 }
