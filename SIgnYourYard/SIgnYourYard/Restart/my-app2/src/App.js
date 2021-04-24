@@ -10,6 +10,8 @@ import Navbar from './components/Navbar';
 import PurchaseHist from './components/PurchaseHist';
 import PriceAdjust from './components/PriceAdjust';
 import AdminNav from './components/AdminNav';
+import Gradient from './components/Gradient';
+
 import {BrowserRouter as Router,
   Switch,
   Route
@@ -23,8 +25,9 @@ function App() {
         <Router>
           <div className="App">
             <Navbar/>
+            <AdminNav/>
             <Switch>
-              <Route path="/" exact component={Home}/>
+              <Route path="/" exact component={Gradient}/>
               <Route path="/contactus" component={Contactus}/>
               <Route path="/paymentinfo" component={Paymentinfo}/>
               <Route path="/loginform" component={Loginform}/>
@@ -32,6 +35,7 @@ function App() {
               <Route path="/inventory" component={Inventory}/>
               <Route path="/purchasehist" component={PurchaseHist}/>
               <Route path="/priceadjust" component={PriceAdjust}/>
+              <Route path="/gradient" component={Home}/>
             </Switch>
           </div>
         </Router>

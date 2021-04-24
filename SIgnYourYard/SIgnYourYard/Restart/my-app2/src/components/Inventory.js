@@ -220,58 +220,58 @@ class Inventory extends Component{
               <h1>Inventory management</h1>
               <div>
                   <div>
-                      <p>Red signs</p>
+                      <p className= "redSign">Red signs</p>
                       {this.state.stock1}
                   </div>
-                  <div>
-                      <Button color="success" size="sm" onClick={this.increment1}>+</Button>
-                      <Button color="danger" size="sm" onClick={this.decrement1}>-</Button>
+                  <div className= "signs">
+                      <Button color="secondary" size="sm" onClick={this.increment1}>+</Button>
+                      <Button color="secondary" size="sm" onClick={this.decrement1}>-</Button>
                   </div>
                   <div>
                       <h3>_________________________________________</h3>
                       <div>
-                          <p>Orange signs</p>
+                          <p className= "orangeSign">Orange signs</p>
                           {this.state.stock2}
                       </div>
-                      <div>
-                          <Button color="success" size="sm" onClick={this.increment2}>+</Button>
-                          <Button color="danger" size="sm" onClick={this.decrement2}>-</Button>
+                      <div className= "signs">
+                          <Button color="secondary" size="sm" onClick={this.increment2}>+</Button>
+                          <Button color="secondary" size="sm" onClick={this.decrement2}>-</Button>
                       </div>
                       <h3>_________________________________________</h3>
                       <div>
-                          <p>Yellow signs</p>
+                          <p className= "yellowSign">Yellow signs</p>
                           {this.state.stock3}
                       </div>
                       <div>
-                          <Button color="success" size="sm" onClick={this.increment3}>+</Button>
-                          <Button color="danger" size="sm" onClick={this.decrement3}>-</Button>
+                          <Button color="secondary" size="sm" onClick={this.increment3}>+</Button>
+                          <Button color="secondary" size="sm" onClick={this.decrement3}>-</Button>
                       </div>
                       <h3>_________________________________________</h3>
                       <div>
-                          <p>Green signs</p>
+                          <p className= "greenSign">Green signs</p>
                           {this.state.stock4}
                       </div>
-                      <div>
-                          <Button color="success" size="sm" onClick={this.increment4}>+</Button>
-                          <Button color="danger" size="sm" onClick={this.decrement4}>-</Button>
+                      <div className= "signs">
+                          <Button color="secondary" size="sm" onClick={this.increment4}>+</Button>
+                          <Button color="secondary" size="sm" onClick={this.decrement4}>-</Button>
                       </div>
                       <h3>_________________________________________</h3>
                       <div>
-                          <p>Blue signs</p>
+                          <p className= "blueSign">Blue signs</p>
                           {this.state.stock5}
                       </div>
-                      <div>
-                          <Button color="success" size="sm" onClick={this.increment5}>+</Button>
-                          <Button color="danger" size="sm" onClick={this.decrement5}>-</Button>
+                      <div className= "signs">
+                          <Button color="secondary" size="sm" onClick={this.increment5}>+</Button>
+                          <Button color="secondary" size="sm" onClick={this.decrement5}>-</Button>
                       </div>
                       <h3>_________________________________________</h3>
                       <div>
-                          <p>Purple signs</p>
+                          <p className= "purpleSign">Purple signs</p>
                           {this.state.stock6}
                       </div>
-                      <div>
-                          <Button color="success" size="sm" onClick={this.increment6}>+</Button>
-                          <Button color="danger" size="sm" onClick={this.decrement6}>-</Button>
+                      <div className= "signs">
+                          <Button color="secondary" size="sm" onClick={this.increment6}>+</Button>
+                          <Button color="secondary" size="sm" onClick={this.decrement6}>-</Button>
                       </div>
                   </div>
               </div>

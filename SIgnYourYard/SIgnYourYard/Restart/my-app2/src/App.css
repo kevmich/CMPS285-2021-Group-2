@@ -27,12 +27,6 @@ nav {
   justify-content: space-around;
   list-style: none;
 }
- 
-/* Home Page */
-
-.home h1{
-  font-family: 'Clicker Script', cursive;
-}
 
 .images{
 width: 200px;
@@ -68,6 +62,17 @@ height: 200px;
   border-radius: 4px;
   top: 50px;
 
+}
+
+.gradients{
+  background-image: linear-gradient(to bottom right, rgb(224, 195, 31), rgb(111, 31, 216));
+  min-height: 600px;
+  text-align: center;
+  font-size: 200px;
+}
+
+.green {
+  color: white;
 }
 
 .label {
@@ -195,6 +200,54 @@ form .form-inner input[type="submit"]:hover {
 
 .padding {
   padding-top: 30px;
+}
+
+.redSign {
+  color: white;
+  background: #c81919;
+  margin-left: 588px;
+  margin-right: 588px;
+  border-radius: 7px;
+}
+
+.orangeSign {
+  color: white;
+  background: #c86a1e;
+  margin-left: 588px;
+  margin-right: 588px;
+  border-radius: 7px;
+}
+
+.yellowSign {
+  color: white;
+  background: #eeb521;
+  margin-left: 588px;
+  margin-right: 588px;
+  border-radius: 7px;
+}
+
+.greenSign {
+  color: white;
+  background: #33770b;
+  margin-left: 588px;
+  margin-right: 588px;
+  border-radius: 7px;
+}
+
+.blueSign {
+  color: white;
+  background: #15639b;
+  margin-left: 588px;
+  margin-right: 588px;
+  border-radius: 7px;
+}
+
+.purpleSign {
+  color: white;
+  background: #4b2a85;
+  margin-left: 588px;
+  margin-right: 588px;
+  border-radius: 7px;
 }
 
 /* Payment Info Page */

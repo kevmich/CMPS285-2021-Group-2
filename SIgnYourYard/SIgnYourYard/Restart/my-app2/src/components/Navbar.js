@@ -1,11 +1,11 @@
-import React from 'react'
+import React, { Component } from 'react'
 import {Link} from 'react-router-dom'
 
-function Navbar() {
-
+class Navbar extends Component {
+render() {
     return (
         <nav>
-            <h3 className= "gold">Sign Your Yard</h3>
+            <h3 className= "purple">Sign Your Yard</h3>
             <ul className="navlinks">
                 <Link className= "gold" to='/information'>
                     <li>General Info</li>
@@ -23,6 +23,6 @@ function Navbar() {
            
         </nav>
     )
-}
+}}
 
 export default Navbar
