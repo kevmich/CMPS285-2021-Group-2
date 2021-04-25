@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 
 namespace SignYourYard.Controllers
 {
+    [Route("/api/order")]
+    [ApiController]
     public class OrderController : Controller
     {
         private readonly DataContext dataContext;
