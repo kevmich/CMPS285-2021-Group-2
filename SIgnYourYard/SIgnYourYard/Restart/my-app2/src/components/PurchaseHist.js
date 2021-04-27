@@ -6,10 +6,6 @@ function PurchaseHist() {
 
     let history = useHistory();
 
-    const hist = () => {
-        history.push('/inventory');
-    }
-
     const [customer, setCustomer] = useState({email: "", date: "", name: ""})
 
     const submitHandler = e => {
@@ -58,7 +54,6 @@ function PurchaseHist() {
                         <input type="submit" value="Enter customer" />
                     </div>
                 </div>
-                <button onClick = {hist}>Inventory Management</button>
             </form>
         </div>
     )

@@ -149,6 +149,7 @@ class Inventory extends Component{
             content: 'A'})
             .then(response => {
                 this.signUpdate()
+                console.log(response)
             })
     }
 
@@ -224,8 +225,12 @@ class Inventory extends Component{
                       {this.state.stock1}
                   </div>
                   <div className= "signs">
-                      <Button color="secondary" size="sm" onClick={this.increment1}>+</Button>
-                      <Button color="secondary" size="sm" onClick={this.decrement1}>-</Button>
+                      <div>
+                          <button className= "redSign" onClick={this.increment1}>+</button>
+                      </div>
+                      <div>
+                          <button className= "redSign" onClick={this.decrement1}>-</button>
+                      </div>
                   </div>
                   <div>
                       <h3>_________________________________________</h3>
@@ -234,8 +239,8 @@ class Inventory extends Component{
                           {this.state.stock2}
                       </div>
                       <div className= "signs">
-                          <Button color="secondary" size="sm" onClick={this.increment2}>+</Button>
-                          <Button color="secondary" size="sm" onClick={this.decrement2}>-</Button>
+                          <button className= "orangeSign" onClick={this.increment2}>+</button>
+                          <button className= "orangeSign" onClick={this.decrement2}>-</button>
                       </div>
                       <h3>_________________________________________</h3>
                       <div>
@@ -243,8 +248,8 @@ class Inventory extends Component{
                           {this.state.stock3}
                       </div>
                       <div>
-                          <Button color="secondary" size="sm" onClick={this.increment3}>+</Button>
-                          <Button color="secondary" size="sm" onClick={this.decrement3}>-</Button>
+                          <button className= "yellowSign" onClick={this.increment3}>+</button>
+                          <button className= "yellowSign" onClick={this.decrement3}>-</button>
                       </div>
                       <h3>_________________________________________</h3>
                       <div>
@@ -252,8 +257,8 @@ class Inventory extends Component{
                           {this.state.stock4}
                       </div>
                       <div className= "signs">
-                          <Button color="secondary" size="sm" onClick={this.increment4}>+</Button>
-                          <Button color="secondary" size="sm" onClick={this.decrement4}>-</Button>
+                          <button className= "greenSign" onClick={this.increment4}>+</button>
+                          <button className= "greenSign" onClick={this.decrement4}>-</button>
                       </div>
                       <h3>_________________________________________</h3>
                       <div>
@@ -261,8 +266,8 @@ class Inventory extends Component{
                           {this.state.stock5}
                       </div>
                       <div className= "signs">
-                          <Button color="secondary" size="sm" onClick={this.increment5}>+</Button>
-                          <Button color="secondary" size="sm" onClick={this.decrement5}>-</Button>
+                          <button className= "blueSign" onClick={this.increment5}>+</button>
+                          <button className= "blueSign" onClick={this.decrement5}>-</button>
                       </div>
                       <h3>_________________________________________</h3>
                       <div>
@@ -270,8 +275,8 @@ class Inventory extends Component{
                           {this.state.stock6}
                       </div>
                       <div className= "signs">
-                          <Button color="secondary" size="sm" onClick={this.increment6}>+</Button>
-                          <Button color="secondary" size="sm" onClick={this.decrement6}>-</Button>
+                          <button className= "purpleSign" onClick={this.increment6}>+</button>
+                          <button className= "purpleSign" onClick={this.decrement6}>-</button>
                       </div>
                   </div>
               </div>

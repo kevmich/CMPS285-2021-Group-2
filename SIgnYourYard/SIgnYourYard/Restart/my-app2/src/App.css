@@ -1,7 +1,3 @@
-/*App*/
-
-/* font-family: montserrat, sans-sarif; */
-
 input, button {
   appearance: none;
   background: none;
@@ -11,21 +7,32 @@ input, button {
 
 /* Navbar */
 
-nav {
-  border-radius: 4px;
+
+.nav {
   background: rgb(100, 117, 129);
   display: flex;
   min-height: 10vh;
   color: rgb(224, 195, 31);
+  justify-content: space-around;
   align-items: center;
+}
+
+
+.navlinks {
+  display: flex;
+  list-style: none;
+  justify-content: space-around;
+  margin-top: 10px;
+}
+
+.navlinks2 {
+  display: flex;
+  list-style: none;
   justify-content: space-around;
 }
 
-.navlinks {
-  width: 50%;
-  display: flex;
-  justify-content: space-around;
-  list-style: none;
+.navlink {
+  padding: 20px;
 }
 
 .images{
@@ -200,6 +207,12 @@ form .form-inner input[type="submit"]:hover {
 
 .padding {
   padding-top: 30px;
+}
+
+.signs {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
 }
 
 .redSign {

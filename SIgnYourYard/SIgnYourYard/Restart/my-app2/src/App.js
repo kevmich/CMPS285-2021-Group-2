@@ -1,5 +1,5 @@
 import './App.css';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Information from './components/Information';
 import Loginform from './components/Loginform';
 import Home from './components/Home';
@@ -11,6 +11,7 @@ import PurchaseHist from './components/PurchaseHist';
 import PriceAdjust from './components/PriceAdjust';
 import AdminNav from './components/AdminNav';
 import Gradient from './components/Gradient';
+import axios from 'axios';
 
 import {BrowserRouter as Router,
   Switch,
@@ -19,13 +20,11 @@ import {BrowserRouter as Router,
 
 function App() {
 
-
   return (
     <div>
         <Router>
-          <div className="App">
+          <div>
             <Navbar/>
-            <AdminNav/>
             <Switch>
               <Route path="/" exact component={Gradient}/>
               <Route path="/contactus" component={Contactus}/>
