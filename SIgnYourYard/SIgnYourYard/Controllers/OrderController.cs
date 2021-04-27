@@ -27,7 +27,6 @@ namespace SignYourYard.Controllers
         {
             var data = dataContext.Set<Order>().Add(new Order
             {
-                Id = targerValue.Id,
                 // purchaseTime = targerValue.purchaseTime,
                 email = targerValue.email,
                 address = targerValue.address,

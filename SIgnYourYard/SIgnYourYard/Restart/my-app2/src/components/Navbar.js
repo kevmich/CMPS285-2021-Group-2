@@ -12,11 +12,11 @@ class Navbar extends Component {
         }
     }
 
-    //useEffect = () => {
-    //axios.get('./').then(response => {
-    //
-    //         })
-    // }
+    componentDidMount() {
+        axios.get('./api/auth/Check?id=1').then(response => {
+            this.setState({isLoggedIn: true})
+        })
+    }
 
     render() {
     return (
@@ -49,7 +49,6 @@ class Navbar extends Component {
                     </div>
                 </div>
             </ul>
-           
         </nav>
     )
 }}

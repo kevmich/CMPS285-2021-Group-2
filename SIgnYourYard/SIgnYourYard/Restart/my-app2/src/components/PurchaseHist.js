@@ -6,7 +6,7 @@ function PurchaseHist() {
 
     let history = useHistory();
 
-    const [customer, setCustomer] = useState({email: "", date: "", name: ""})
+    const [customer, setCustomer] = useState({email: "", date: "", name: "", price: 0})
 
     const submitHandler = e => {
         e.preventDefault();
@@ -15,19 +15,22 @@ function PurchaseHist() {
     }
 
     const submitCustomer = customer => {
-        axios.post('/api', {
-            email: customer.email,
-            name: customer.name,
-            date: customer.date
+        axios.post('/api/order/CreateOrder', {
+            email: "email@email.com",
+            address: "address",
+            signs: 40,
+            purchaseTime: 1
         })
             .then(function (response) {
                 console.log(response);
                 checker()
-            })
+            }).catch(error => {
+                console.log(error)
+        })
     }
 
     function checker(){
-        axios.get('api/')
+        axios.get('api/order/OrderInfo?Id=0')
             .then(function (response) {
                 console.log(response)
             })
@@ -49,7 +52,7 @@ function PurchaseHist() {
                         </div>
                         <div className= "form-group">
                             <p>Enter date of purchase: </p>
-                            <input type="date" onChange={e => setCustomer({...customer, date: e.target.value})}/>
+                            <input type="price" onChange={e => setCustomer({...customer, price: e.target.value})}/>
                         </div>
                         <input type="submit" value="Enter customer" />
                     </div>

@@ -1,7 +1,5 @@
 import React, { useState, Component } from 'react';
-import { useHistory } from 'react-router-dom';
 import axios from 'axios';
-import { Button } from 'reactstrap'
 
 class Inventory extends Component{
 
@@ -149,7 +147,6 @@ class Inventory extends Component{
             content: 'A'})
             .then(response => {
                 this.signUpdate()
-                console.log(response)
             })
     }
 
@@ -161,7 +158,6 @@ class Inventory extends Component{
         axios.get('api/sign/GetSignStock?signId=2')
             .then(response => {
                 this.setState({stock2: response.data.stock})
-
             })
         axios.get('api/sign/GetSignStock?signId=3')
             .then(response => {

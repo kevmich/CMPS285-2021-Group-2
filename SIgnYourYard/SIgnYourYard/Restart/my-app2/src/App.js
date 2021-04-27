@@ -21,7 +21,7 @@ import {BrowserRouter as Router,
 function App() {
 
   return (
-    <div>
+    <div className= "App">
         <Router>
           <div>
             <Navbar/>
