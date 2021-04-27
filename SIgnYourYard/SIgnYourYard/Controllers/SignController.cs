@@ -28,6 +28,7 @@ namespace SignYourYard.Controllers
         }
 
         // Endpoint for adding a new sign to the database
+        [Authorize(Roles = Roles.Admin)]
         [HttpPost("CreateSign")]
         public ActionResult<CreateSignDto> AddSign( CreateSignDto targetValue )
         {
@@ -56,7 +57,7 @@ namespace SignYourYard.Controllers
         }
 
         // Endpoint for editing a sign that already exists
-        //[Authorize]
+        [Authorize(Roles = Roles.Admin)]
         [HttpPut("SignUpdate")]
         public ActionResult<UpdateSignDto> ChangeSign(int signId, UpdateSignDto targetValue)
         {
@@ -80,7 +81,7 @@ namespace SignYourYard.Controllers
         }
 
         // Endpoint for getting sign info
-        //[Authorize]
+        [Authorize(Roles = Roles.Admin)]
         [HttpGet("GetSignStock")]
         public ActionResult<SignStockDto> GetSignStock( int signId )
         {
@@ -102,6 +103,7 @@ namespace SignYourYard.Controllers
             }
         }
 
+        [Authorize(Roles = Roles.Admin)]
         [HttpPut("UpdateSignStock")]
         public ActionResult<SignStockDto> UpdateSignStockDto( int signId, SignStockDto targetValue)
         {
@@ -120,6 +122,7 @@ namespace SignYourYard.Controllers
             }
         }
 
+        [Authorize(Roles = Roles.Admin)]
         [HttpGet("GetAllStock")]
         public ActionResult<AllStockDto> SignStockDto()
         {

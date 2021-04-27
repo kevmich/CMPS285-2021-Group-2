@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using SignYourYard.Data;
 using SignYourYard.Data.Entities;
 using SignYourYard.Features.DataTransferObjects;
@@ -8,6 +9,7 @@ using SignYourYard.Features.Users;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Threading.Tasks;
 
 namespace SignYourYard.Controllers
@@ -32,6 +34,18 @@ namespace SignYourYard.Controllers
 
         // Login authentication
         // High volume of space magic, make sure to google more of this
+
+        private static Expression<Func<User, UserDto> > mapper()
+        {
+            return x => new UserDto
+            {
+                Id = x.Id,
+                username = x.UserName,
+                Roles = x.Roles
+            };
+        }
+
+
         [HttpPost("login")]
         // [Authorize(Roles = Roles.Admin)] 
         public async Task<ActionResult> LoginAsync(LoginDto dto)
@@ -69,6 +83,14 @@ namespace SignYourYard.Controllers
             await userManager.CreateAsync(user, dto.password);
             await userManager.AddToRoleAsync(user, dto.role);
             return Ok();
+        }
+
+        [HttpGet("Check")]
+        public async Task<ActionResult<UserDto>> CheckUser()
+        {
+
+            var userName = User.Identity.Name;
+            return await dataContext.Set<User>().Where(x => x.UserName == userName).Select(mapper()).FirstOrDefaultAsync();
         }
     }
 }
