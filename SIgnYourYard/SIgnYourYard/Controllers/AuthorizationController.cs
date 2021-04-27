@@ -35,11 +35,10 @@ namespace SignYourYard.Controllers
         // Login authentication
         // High volume of space magic, make sure to google more of this
 
-        private static Expression<Func<User, UserDto> > mapper()
+        private static Expression<Func<User, UserDto>> mapper()
         {
             return x => new UserDto
             {
-                Id = x.Id,
                 username = x.UserName,
                 Roles = x.Roles
             };
@@ -79,10 +78,42 @@ namespace SignYourYard.Controllers
         [Authorize(Roles = Roles.Admin)]
         public async Task<ActionResult> Create(CreateUserDto dto)
         {
-            var user = new User { UserName = dto.username };
-            await userManager.CreateAsync(user, dto.password);
-            await userManager.AddToRoleAsync(user, dto.role);
-            return Ok();
+            var user = new User
+            {
+                UserName = dto.username
+            };
+
+            using (var transaction = await dataContext.Database.BeginTransactionAsync())
+            {
+                if( string.Equals(dto.role, Roles.Customer, StringComparison.InvariantCultureIgnoreCase))
+                {
+                    return BadRequest();
+                }
+
+                if( !await dataContext.Roles.AnyAsync( x => x.Name == dto.role ))
+                {
+                    return BadRequest();
+                }
+
+                var identityResult = await userManager.CreateAsync(user, dto.password);
+                if (!identityResult.Succeeded)
+                {
+                    return BadRequest();
+                }
+
+                var roleResult = await userManager.AddToRoleAsync(user, dto.role);
+                if( !roleResult.Succeeded)
+                {
+                    return BadRequest();
+                }
+
+                transaction.Commit();
+
+                return Created(string.Empty, new UserDto
+                {
+                    username = user.UserName
+                });
+            }
         }
 
         [HttpGet("Check")]
@@ -90,7 +121,20 @@ namespace SignYourYard.Controllers
         {
 
             var userName = User.Identity.Name;
-            return await dataContext.Set<User>().Where(x => x.UserName == userName).Select(mapper()).FirstOrDefaultAsync();
+            var temp = await dataContext.Set<User>().Where(x => x.UserName == userName).Select(mapper()).FirstOrDefaultAsync();
+            if (temp == null)
+            {
+                return BadRequest();
+            }
+            return Ok(temp);
+        }
+
+        [HttpPost("Logout")]
+        public async Task<ActionResult> logout()
+        {
+            await signInManager.SignOutAsync();
+
+            return Ok();
         }
     }
 }
