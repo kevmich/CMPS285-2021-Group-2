@@ -1,4 +1,6 @@
 import React from 'react'
+import louisianaServiceAreas from '../Pictures/louisianaServiceAreas.jpg'
+
 
 function PaymentInfo() {
     return (
@@ -38,6 +40,9 @@ function PaymentInfo() {
                     </div>
                 </div>
             </div>
+        <div>
+            <img src ={louisianaServiceAreas} height={200} width={200}></img>
+        </div>  
             <div className = "margins">
                 <h3 className= "label">Pricing per Package:</h3>
                 <p className="samecolor">l</p>
