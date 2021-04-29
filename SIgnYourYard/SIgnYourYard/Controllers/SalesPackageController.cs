@@ -25,7 +25,7 @@ namespace SignYourYard.Controllers
             this.dataContext = dataContext;
         }
 
-        [Authorize(Roles = Roles.Admin)]
+        //[Authorize(Roles = Roles.Admin)]
         [HttpPost("CreateSalesPackage")]
         public ActionResult<CreateSalesPackageDto> CreateSalesPackage(CreateSalesPackageDto targetValue)
         {
@@ -43,7 +43,7 @@ namespace SignYourYard.Controllers
             }
         }
 
-        [Authorize(Roles = Roles.Admin)]
+        //[Authorize(Roles = Roles.Admin)]
         [HttpGet("GetSalesPackageInfo")]
         public ActionResult<GetSalesPackageDto> GetSalesPackageInfo()
         {
