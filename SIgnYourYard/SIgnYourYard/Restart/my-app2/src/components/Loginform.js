@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, Component } from 'react';
 import { useHistory } from 'react-router-dom';
 import axios from 'axios';
 
@@ -14,8 +14,8 @@ function Loginform() {
             password: details.password
           })
           .then(function (response) {
-            console.log(response);
             history.push('/inventory')
+              window.location.reload()
           })
             .catch (err => {
         if (err.response) {

@@ -64,6 +64,10 @@ input, button {
 
 /* Navbar */
 
+.padTop {
+  padding-top: 10px;
+}
+
 .syygr {
   background-image: linear-gradient(to bottom right, rgb(221, 202, 39), rgb(161, 92, 250));
   text-align: center;

@@ -12,10 +12,17 @@ class Navbar extends Component {
         }
     }
 
+    LoggingOut = () => {
+        axios.post('./api/auth/Logout').then(response => {
+            this.setState({isLoggedIn: false})
+        })
+    }
+
     componentDidMount() {
-        axios.get('./api/auth/Check?id=1').then(response => {
-            console.log(response)
+        axios.get('./api/auth/Check').then(response => {
+            if(response.data.username === "admin@admin.com")
             this.setState({isLoggedIn: true})
+            else(this.setState({isLoggedIn: false}))
         })
     }
 
@@ -52,6 +59,13 @@ class Navbar extends Component {
                             <li>Login</li>
                         </Link>
                     </div>
+                    {
+                        (this.state.isLoggedIn === true) ? (
+                            <div className="padTop">
+                                <button className="purple" onClick={this.LoggingOut}>Logout</button>
+                            </div>
+                        ) : ""
+                    }
                 </div>
             </ul>
         </nav>
