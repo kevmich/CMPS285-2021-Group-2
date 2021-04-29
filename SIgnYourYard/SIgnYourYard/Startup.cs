@@ -36,6 +36,21 @@ namespace SIgnYourYard
             services.AddDbContext<DataContext>(options=>
                 options.UseSqlServer(Configuration.GetConnectionString("DataContext")));
 
+            services.ConfigureApplicationCookie(OptionsBuilderConfigurationExtensions =>
+           {
+               OptionsBuilderConfigurationExtensions.Events.OnRedirectToAccessDenied = context =>
+               {
+                   context.Response.StatusCode = 403;
+                   return Task.CompletedTask;
+               };
+               OptionsBuilderConfigurationExtensions.Events.OnRedirectToLogin = context =>
+               {
+                   context.Response.StatusCode = 401;
+                   return Task.CompletedTask;
+               };
+           }
+            );
+
             services.AddSpaStaticFiles(configuration =>
             {
                 configuration.RootPath = "Restart/my-app2/build";
@@ -44,10 +59,7 @@ namespace SIgnYourYard
             services.AddIdentity<User, Role>()
                 .AddEntityFrameworkStores<DataContext>();
 
-            services.AddSwaggerGen(c =>
-            {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "API", Version = "v1" });
-            });
+            services.AddSwaggerGen();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
