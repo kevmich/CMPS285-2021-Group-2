@@ -8,12 +8,13 @@ class Navbar extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            isLoggedIn: true
+            isLoggedIn: false
         }
     }
 
     componentDidMount() {
         axios.get('./api/auth/Check?id=1').then(response => {
+            console.log(response)
             this.setState({isLoggedIn: true})
         })
     }
