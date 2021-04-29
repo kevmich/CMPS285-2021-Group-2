@@ -4,19 +4,22 @@ import {Link} from 'react-router-dom'
 class AdminNav extends Component {
 render(){
     return (
+        <div>
         <nav>
-            <ul className="navlinks">
-                <Link to='/priceadjust'>
-                    <li>Adjust Prices</li>
-                </Link>
-                <Link to='/inventory'>
-                    <li>Inventory</li>
-                </Link>
-                <Link to='/purchasehist'>
-                    <li>Purchase History</li>
-                </Link>
+            <ul className="navlinks2">
+                <div className= "navlink">
+                    <Link className= "purple" to='/priceadjust'>
+                        <li>Adjust Prices</li>
+                    </Link>
+                </div>
+                <div className= "navlink">
+                    <Link className= "purple" to='/inventory'>
+                        <li>Inventory</li>
+                    </Link>
+                </div>
             </ul>
         </nav>
+</div>
     )
 }}
 

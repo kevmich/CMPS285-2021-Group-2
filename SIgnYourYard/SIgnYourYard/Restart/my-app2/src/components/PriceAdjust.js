@@ -23,7 +23,6 @@ submitPrices = () => {
     axios.put('',
         )
         .then(response => {
-
         })
 }
 
@@ -36,7 +35,7 @@ render(){
                         <a className= "title">Price Adjustment:</a>
                         <div className= "form-group">
                             <p>Sign Your Yard Package (ex: $95): </p>
-                            <input type="price" onChange={this.submitPrices({})}/>
+                            <input type="price" onChange={this.submitPrices(this.state.price1)}/>
                         </div>
                         <div className= "form-group">
                             <p>Extra Characters: </p>

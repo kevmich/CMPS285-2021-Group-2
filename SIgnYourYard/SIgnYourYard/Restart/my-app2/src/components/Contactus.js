@@ -11,12 +11,12 @@ function Contactus() {
         <div className= "extend">
             <p className= "title">Contact Us</p>
             <h3 className= "label">Hours:</h3>
-            <p>Mon-Fri: 9:00-5:00</p>
-            <p>Closed on Saturday and Sunday</p>
+            <p className= "whitetext">Mon-Fri: 9:00-5:00</p>
+            <p className= "whitetext">Closed on Saturday and Sunday</p>
             <h3 className= "label">Call us for reservations:</h3>
-            <p>(255)-773-4470</p>
+            <p className= "whitetext">(255)-773-4470</p>
             <h3 className= "label">Follow us on Social Media!</h3>
-            <p>Click the icons to take you to our social media accounts:</p>
+            <p className= "whitetext">Click the icons to take you to our social media accounts:</p>
             <div className="social-container">
             <a href="https://www.twitter.com/signyouryard" className="twitter icon" target="_blank">
                 <FontAwesomeIcon icon={faTwitter} size="3x"/>

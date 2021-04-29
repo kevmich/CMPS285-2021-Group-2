@@ -19,7 +19,7 @@ function Loginform() {
           })
             .catch (err => {
         if (err.response) {
-            setError('Email and/or Password is incorrect')
+            setError('Email and/or Password is incorrect!')
         } 
           });
     }
@@ -34,11 +34,11 @@ function Loginform() {
 
     return (
         <div className= "whitespace">
-            <form className="gradient" onSubmit={submitHandler}>
-                <div className="buffer">
+            <form onSubmit={submitHandler} className= "gradient">
+                <div className= "bufferlog">
                     <div className= "form-inner">
                         <h1 className= "logtitle">Login</h1>
-                        <p className="logsamecolor">l</p>
+                        <p className="samecolors">l</p>
                         {(error != "") ? ( <div className="error">{error}</div>) : ""}
                         <div className="form-group">
                             <label htmlFor="email">Email:</label>
