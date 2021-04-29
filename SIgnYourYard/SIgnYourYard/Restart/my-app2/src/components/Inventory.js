@@ -205,16 +205,11 @@ class Inventory extends Component{
           })
   }
 
-  //let history = useHistory();
-
-    //const hist = () => {
-    //    history.push('/purchasehist');
-   // }
     render(){
     return(
       <div className= "padding">
           <div className= "inventory">
-              <h1>Inventory management</h1>
+              <h1 className= "title">Inventory management</h1>
               <div>
                   <div>
                       <p className= "redSign">Red signs</p>
@@ -222,10 +217,10 @@ class Inventory extends Component{
                   </div>
                   <div className= "signs">
                       <div>
-                          <button className= "redSign" onClick={this.increment1}>+</button>
+                          <button className= "redSign" onClick={this.decrement1}>-</button>
                       </div>
                       <div>
-                          <button className= "redSign" onClick={this.decrement1}>-</button>
+                          <button className= "redSign" onClick={this.increment1}>+</button>
                       </div>
                   </div>
                   <div>
@@ -235,8 +230,8 @@ class Inventory extends Component{
                           {this.state.stock2}
                       </div>
                       <div className= "signs">
-                          <button className= "orangeSign" onClick={this.increment2}>+</button>
                           <button className= "orangeSign" onClick={this.decrement2}>-</button>
+                          <button className= "orangeSign" onClick={this.increment2}>+</button>
                       </div>
                       <h3>_________________________________________</h3>
                       <div>
@@ -244,8 +239,8 @@ class Inventory extends Component{
                           {this.state.stock3}
                       </div>
                       <div>
-                          <button className= "yellowSign" onClick={this.increment3}>+</button>
                           <button className= "yellowSign" onClick={this.decrement3}>-</button>
+                          <button className= "yellowSign" onClick={this.increment3}>+</button>
                       </div>
                       <h3>_________________________________________</h3>
                       <div>
@@ -253,8 +248,8 @@ class Inventory extends Component{
                           {this.state.stock4}
                       </div>
                       <div className= "signs">
-                          <button className= "greenSign" onClick={this.increment4}>+</button>
                           <button className= "greenSign" onClick={this.decrement4}>-</button>
+                          <button className= "greenSign" onClick={this.increment4}>+</button>
                       </div>
                       <h3>_________________________________________</h3>
                       <div>
@@ -262,8 +257,8 @@ class Inventory extends Component{
                           {this.state.stock5}
                       </div>
                       <div className= "signs">
-                          <button className= "blueSign" onClick={this.increment5}>+</button>
                           <button className= "blueSign" onClick={this.decrement5}>-</button>
+                          <button className= "blueSign" onClick={this.increment5}>+</button>
                       </div>
                       <h3>_________________________________________</h3>
                       <div>
@@ -271,8 +266,8 @@ class Inventory extends Component{
                           {this.state.stock6}
                       </div>
                       <div className= "signs">
-                          <button className= "purpleSign" onClick={this.increment6}>+</button>
                           <button className= "purpleSign" onClick={this.decrement6}>-</button>
+                          <button className= "purpleSign" onClick={this.increment6}>+</button>
                       </div>
                   </div>
               </div>

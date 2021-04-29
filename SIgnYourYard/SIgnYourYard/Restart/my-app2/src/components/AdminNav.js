@@ -8,20 +8,15 @@ render(){
         <nav>
             <ul className="navlinks2">
                 <div className= "navlink">
-                    <Link className= "gold" to='/priceadjust'>
+                    <Link className= "purple" to='/priceadjust'>
                         <li>Adjust Prices</li>
                     </Link>
                 </div>
                 <div className= "navlink">
-                    <Link className= "gold" to='/inventory'>
+                    <Link className= "purple" to='/inventory'>
                         <li>Inventory</li>
                     </Link>
                 </div>
-                    <div className= "navlink">
-                    <Link className= "gold" to='/purchasehist'>
-                        <li>Purchase History</li>
-                    </Link>
-                    </div>
             </ul>
         </nav>
 </div>

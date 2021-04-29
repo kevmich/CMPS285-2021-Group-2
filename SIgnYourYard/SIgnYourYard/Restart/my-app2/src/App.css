@@ -7,14 +7,95 @@ input, button {
 
 /* App */
 
+.App {
+  background: #23333e;
+  min-height: 1000px;
+}
+
+/* Text and Fonts */
+
+.samecolorb {
+  color: #23333e
+}
+
+.SYYt {
+  padding-top: 20px;
+  padding-bottom: 25px;
+  font-family: 'Cinzel', serif;
+  font-size: xx-large;
+  color: rgb(221, 202, 39);
+  text-align: center;
+}
+
+.whitetext {
+  color: white;
+}
+
+.title {
+  font-family: 'Sarabun', sans-serif;
+  color: rgb(221, 202, 39);
+  text-align: center;
+  font-size: 40px;
+
+}
+
+.label {
+  padding-top: 20px;
+  font-family: 'Sarabun', sans-serif;
+  font-size: 30px;
+  color: rgb(161, 92, 250);
+}
+
+.body {
+  font-family: 'PT Serif', serif;
+  color: white;
+}
+
+/* Home */
+
+.SYY {
+  padding-top: 25px;
+  padding-bottom: 35px;
+  font-family: 'Cinzel', serif;
+  font-size: xxx-large;
+  color: rgb(221, 202, 39);
+  text-align: center;
+}
+
 /* Navbar */
 
+.syygr {
+  background-image: linear-gradient(to bottom right, rgb(221, 202, 39), rgb(161, 92, 250));
+  text-align: center;
+  justify-content: center;
+  padding-top: 5px;
+  padding-right: 5px;
+  padding-left: 5px;
+  padding-bottom: 5px;
+  border-radius: 4px;
+}
+
+.samecolorbg {
+  background: #23333e;
+  border-radius: 4px;
+  padding: 5px;
+}
+
+.purpleNav {
+  color: rgb(161, 92, 250);
+  font-family: 'Cinzel', serif;
+}
+
+.goldNav {
+  color: white;
+  font-family: 'Cinzel', serif;
+}
 
 .nav {
-  background: rgb(100, 117, 129);
+  background: rgb(200, 208, 215);
   display: flex;
   min-height: 10vh;
-  color: rgb(224, 195, 31);
+  color: rgb(221, 202, 39);
   justify-content: space-around;
   align-items: center;
 }
@@ -37,13 +118,7 @@ input, button {
   padding: 20px;
 }
 
-.images{
-width: 200px;
-height: 200px;
-  }
-
 /* Page Layout */
-
 
 .margins{
   margin-left: 200px;
@@ -64,7 +139,7 @@ height: 200px;
 }
 
 .gradient{
-  background-image: linear-gradient(to bottom right, rgb(224, 195, 31), rgb(111, 31, 216));
+  background: rgb(139, 163, 164);
   display: block;
   position: relative;
   padding: 5px;
@@ -74,7 +149,7 @@ height: 200px;
 }
 
 .gradients{
-  background-image: linear-gradient(to bottom right, rgb(224, 195, 31), rgb(111, 31, 216));
+  background-image: linear-gradient(to bottom right, rgb(221, 202, 39), rgb(161, 92, 250));
   min-height: 600px;
   text-align: center;
   font-size: 200px;
@@ -84,50 +159,46 @@ height: 200px;
   color: white;
 }
 
-.label {
-  font-family: 'Lato', sans-serif;
-  font-size: x-large;
-  color: rgb(111, 31, 216);
-
-}
-
-.title {
-  font-family: 'Lato', sans-serif;
-  color: rgb(235, 186, 26);
-  font-size: 30px;
-  text-align: center;
-  text-decoration: underline;
-}
-
 .title1 {
-  font-family: 'Lato', sans-serif;
-  color: rgb(235, 186, 26);
+  color: rgb(221, 202, 39);
   font-size: 30px;
   text-align: center;
 }
 
 .gold {
-  color:rgb(235, 186, 26);
+  padding-top: 10px;
+  color: rgb(221, 202, 39);
+  font-family: 'PT Serif', serif;
 }
 
 .purple {
-  color: rgb(111, 31, 216);
+  padding-top: 10px;
+  color: rgb(161, 92, 250);
+  font-family: 'PT Serif', serif;
 }
 
 /* Login Form */
 
-.logsamecolor {
-  color: rgb(230, 228, 228);
+.error {
+  color: red;
+}
+
+.bufferlog{
+  background-color: rgb(161, 166, 167);
+  border: rgb(230, 228, 228);
+  border-radius: 4px;
 }
 
 .logtitle {
   font-family: 'Lato', sans-serif;
-  color: rgb(235, 186, 26);
+  color: rgb(221, 202, 39);
   font-size: 40px;
   text-align: center;
 }
 
 .whitespace {
+  padding-top: 10px;
+  height: 75%;
   width: 50%;
   display: block;
   margin-left: auto;
@@ -168,7 +239,7 @@ form .form-inner .form-group{
 }
 
 .form-inner .form-group:focus-within label{
-  color: rgb(111, 31, 216);
+  color: rgb(161, 92, 250);
 }
 
 form .form-inner .form-group input {
@@ -188,7 +259,7 @@ form .form-inner input[type="submit"] {
   display: inline-block;
   padding: 10px 15px;
   border-radius: 8px;
-  background-image: linear-gradient(to right, rgb(111, 31, 216),rgb(111, 31, 216), rgb(224, 195, 31));
+  background-image: linear-gradient(to right, rgb(161, 92, 250), rgb(161, 92, 250), rgb(221, 202, 39));
   background-size: 200%;
   background-position: 0%;
   transition: 0.4s;
@@ -223,6 +294,7 @@ form .form-inner input[type="submit"]:hover {
   margin-left: 588px;
   margin-right: 588px;
   border-radius: 7px;
+  display: grid;
 }
 
 .orangeSign {
@@ -267,13 +339,17 @@ form .form-inner input[type="submit"]:hover {
 
 /* Payment Info Page */
 
+.topPad {
+  padding-top: 30px;
+}
+
 .sidebyside {
   display: flex;
   justify-content: space-around;
 }
 
-.samecolor {
-  color: rgb(255, 255, 255)
+.samecolors {
+color: rgb(161, 166, 167);
 }
 
 .infowhitespace {
@@ -284,30 +360,9 @@ form .form-inner input[type="submit"]:hover {
   margin-right: auto
 }
 
-.buton {
-  right: 200px;
-}
-
-/* Payment History Page */
-
-.ph {
-  display: block;
-  position: center;
-  align-items: center;
-}
-
-.form-ph {
-  position: relative;
-  display: block;
-  padding: 10px;
-  z-index: 2;
-}
-
-.buffer2{
-  background-color: rgb(216, 222, 222);
-  padding: 20px;
-  border: rgb(151, 153, 149);
-  border-radius: 4px;
+.buffer2 {
+  background: rgb(174, 181, 188);
+  border-radius: 2px;
 }
 
 /* Price Adjustment Page */
@@ -316,7 +371,7 @@ form .form-inner input[type="submit"]:hover {
   display: inline-block;
   padding: 10px 15px;
   border-radius: 8px;
-  background-image: linear-gradient(to right, rgb(111, 31, 216),rgb(111, 31, 216), rgb(224, 195, 31));
+  background-image: linear-gradient(to right, rgb(161, 92, 250), rgb(161, 92, 250), rgb(221, 202, 39));
   background-size: 200%;
   background-position: 0%;
   transition: 0.4s;
@@ -333,7 +388,7 @@ form .form-inner input[type="submit"]:hover {
 
 .social-container {
   justify-content: center;
-padding: 20px 120px;
+padding: 10px 110px;
 }
 a.icon {
 margin: 0 1rem;
@@ -346,7 +401,7 @@ a.icon:hover {
 }
 
 a.fb {
-  color: blue;
+  color: #4795de;
 }
 
 a.insta {

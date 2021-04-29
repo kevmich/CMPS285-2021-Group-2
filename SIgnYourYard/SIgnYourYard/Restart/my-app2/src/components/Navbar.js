@@ -21,29 +21,33 @@ class Navbar extends Component {
     render() {
     return (
         <nav className= "nav">
-            <h3 className= "purple">Sign Your Yard</h3>
+            <div className= "syygr">
+                <div className= "samecolorbg">
+                    <h3 className= "goldNav">Sign Your Yard</h3>
+                </div>
+            </div>
             <ul>
                 <div className="navlinks">
                     {
                         (this.state.isLoggedIn === true) ? (<AdminNav/>) : ""
                     }
                     <div className= "navlink">
-                        <Link className= "gold" to='/information'>
+                        <Link className= "purple" to='/information'>
                             <li>General Info</li>
                         </Link>
                     </div>
                     <div className= "navlink">
-                        <Link className= "gold" to='/paymentinfo'>
+                        <Link className= "purple" to='/paymentinfo'>
                             <li>Payment Info</li>
                         </Link>
                     </div>
                     <div className= "navlink">
-                        <Link className= "gold" to='/contactus'>
+                        <Link className= "purple" to='/contactus'>
                             <li>Contact Us</li>
                         </Link>
                     </div>
                     <div className= "navlink">
-                        <Link className= "gold" to='/loginform'>
+                        <Link className= "purple" to='/loginform'>
                             <li>Login</li>
                         </Link>
                     </div>

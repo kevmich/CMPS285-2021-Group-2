@@ -7,11 +7,11 @@ function Home() {
         <div className="extend">
             <div className="home">
                 <p className= "title1">Welcome to </p>
-                <p className= "title">Sign Your Yard</p>
+                <p className= "SYY">Sign Your Yard</p>
                 <p className="label">Gallery</p>
-                <div className= "pad">
+                <div>
                         
-                       <Carousel className= "images"> 
+                       <Carousel>
                        </Carousel>
                     
                 </div>
