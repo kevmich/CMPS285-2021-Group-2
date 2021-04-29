@@ -55,7 +55,7 @@ input, button {
 
 .SYY {
   padding-top: 25px;
-  padding-bottom: 35px;
+  padding-bottom: 30px;
   font-family: 'Cinzel', serif;
   font-size: xxx-large;
   color: rgb(221, 202, 39);
@@ -149,7 +149,6 @@ input, button {
   padding: 5px;
   border-radius: 4px;
   top: 50px;
-
 }
 
 .gradients{
@@ -278,6 +277,20 @@ form .form-inner input[type="submit"]:hover {
 
 /* Inventory Page */
 
+.invmarg {
+  margin-left: 200px;
+  margin-right: 200px;
+}
+
+.invmarg button {
+  color: white;
+}
+
+.invsidebyside {
+  display: flex;
+  justify-content: space-around;
+}
+
 .inventory {
   text-align: center;
 }
@@ -293,55 +306,53 @@ form .form-inner input[type="submit"]:hover {
 }
 
 .redSign {
-  color: white;
-  background: #c81919;
-  margin-left: 588px;
-  margin-right: 588px;
-  border-radius: 7px;
-  display: grid;
+  color: red;
 }
 
 .orangeSign {
-  color: white;
-  background: #c86a1e;
-  margin-left: 588px;
-  margin-right: 588px;
-  border-radius: 7px;
+  color: orange;
 }
 
 .yellowSign {
-  color: white;
-  background: #eeb521;
-  margin-left: 588px;
-  margin-right: 588px;
-  border-radius: 7px;
+  color: yellow;
 }
 
 .greenSign {
-  color: white;
-  background: #33770b;
-  margin-left: 588px;
-  margin-right: 588px;
-  border-radius: 7px;
+  color: green;
 }
 
 .blueSign {
-  color: white;
-  background: #15639b;
-  margin-left: 588px;
-  margin-right: 588px;
-  border-radius: 7px;
+  color: blue;
 }
 
 .purpleSign {
-  color: white;
-  background: #4b2a85;
-  margin-left: 588px;
-  margin-right: 588px;
-  border-radius: 7px;
+  color: purple;
 }
 
 /* Payment Info Page */
+
+.payGradient{
+  background: rgb(139, 163, 164);
+  display: block;
+  position: relative;
+  padding: 5px;
+  border-radius: 4px;
+  justify-content: center;
+  align-items: center;
+}
+
+.iminfowhitespace {
+  padding-bottom: 100px;
+  display: block;
+  margin-left: 400px;
+  margin-right: 400px;
+}
+
+.payImage {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
 
 .topPad {
   padding-top: 30px;
@@ -357,7 +368,7 @@ color: rgb(161, 166, 167);
 }
 
 .infowhitespace {
-  padding-bottom: 100px;
+  padding-bottom: 60px;
   width: 50%;
   display: block;
   margin-left: auto;

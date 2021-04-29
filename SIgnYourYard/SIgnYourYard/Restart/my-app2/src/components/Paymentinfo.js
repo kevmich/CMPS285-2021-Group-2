@@ -1,8 +1,27 @@
-import React from 'react'
+import React, { Component } from 'react'
 import louisianaServiceAreas from '../Pictures/louisianaServiceAreas.jpg'
+import axios from 'axios'
+import PriceAdjust from "./PriceAdjust";
 
 
-function PaymentInfo() {
+class PaymentInfo extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            isLoggedIn: false
+        }
+    }
+
+    componentDidMount() {
+        axios.get('./api/auth/Check').then(response => {
+            if(response.data.username === "admin@admin.com")
+                this.setState({isLoggedIn: true})
+            else(this.setState({isLoggedIn: false}))
+        })
+
+    }
+
+    render(){
     return (
         <div>
             <div className= "topPad">
@@ -18,7 +37,7 @@ function PaymentInfo() {
             <div className= "infowhitespace">
                 <div className= "gradient">
                     <div className= "buffer2">
-                        <div className="sidebyside">    
+                        <div className="sidebyside">
                             <div>
                                 <p className= "purple">Denham Springs</p>
                                 <p className= "purple">Watson</p>
@@ -42,9 +61,11 @@ function PaymentInfo() {
                     </div>
                 </div>
             </div>
-        <div>
-            <img src ={louisianaServiceAreas} height={200} width={200}></img>
-        </div>  
+            <div className= "iminfowhitespace">
+                <div className= "payGradient">
+                    <img className= "payImage" src ={louisianaServiceAreas} height={200} width={200}></img>
+                </div>
+            </div>
             <div className = "margins">
                 <h3 className= "label">Pricing per Package:</h3>
                 <p className="samecolorb">l</p>
@@ -82,8 +103,11 @@ function PaymentInfo() {
                     </div>
                 </div>
             </div>
+            {(this.isLogged === "true") ? (
+                <PriceAdjust/>
+            ) : ""}
         </div>
-    )
+    )}
 }
 
 export default PaymentInfo

@@ -8,7 +8,6 @@ function Home() {
             <div className="home">
                 <p className= "title1">Welcome to </p>
                 <p className= "SYY">Sign Your Yard</p>
-                <p className="label">Gallery</p>
                 <div>
                         
                        <Carousel>
