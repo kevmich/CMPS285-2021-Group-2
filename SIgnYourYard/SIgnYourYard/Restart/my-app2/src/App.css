@@ -278,8 +278,8 @@ form .form-inner input[type="submit"]:hover {
 /* Inventory Page */
 
 .invmarg {
-  margin-left: 200px;
-  margin-right: 200px;
+  margin-left: 150px;
+  margin-right: 150px;
 }
 
 .invmarg button {
@@ -289,6 +289,7 @@ form .form-inner input[type="submit"]:hover {
 .invsidebyside {
   display: flex;
   justify-content: space-around;
+  padding-top: 30px;
 }
 
 .inventory {
@@ -299,33 +300,41 @@ form .form-inner input[type="submit"]:hover {
   padding-top: 30px;
 }
 
-.signs {
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
+.stonksl {
+  padding-bottom: 31px;
 }
 
-.redSign {
+.stonks {
+  padding-top: 25px;
+  padding-bottom: 20px;
+}
+
+.latitude-Letter {
+  color: white;
+  padding-top: 65px;
+}
+
+.latitude-Red {
   color: red;
 }
 
-.orangeSign {
+.latitude-Orange {
   color: orange;
 }
 
-.yellowSign {
+.latitude-Yellow {
   color: yellow;
 }
 
-.greenSign {
+.latitude-Green {
   color: green;
 }
 
-.blueSign {
+.latitude-Blue {
   color: blue;
 }
 
-.purpleSign {
+.latitude-Purple {
   color: purple;
 }
 

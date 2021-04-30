@@ -31,7 +31,7 @@ class Navbar extends Component {
         <nav className= "nav">
             <div className= "syygr">
                 <div className= "samecolorbg">
-                    <h3 className= "goldNav">Sign Your Yard</h3>
+                    <Link className= "goldNav" to='/'>Sign Your Yard</Link>
                 </div>
             </div>
             <ul>
