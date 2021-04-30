@@ -79,6 +79,25 @@ namespace SignYourYard.Controllers
                 return Ok(response);
             }
         }
+
+        [Authorize(Roles = Roles.Admin)]
+        [HttpPut("UpdateSalesPackage")]
+        public ActionResult<GetSalesPackageDto> updateSalesPackage(int id, SalesPackageUpdateDto targetValue)
+        {
+            using (var transaction = dataContext.Database.BeginTransaction())
+            {
+                var data = dataContext.Set<SalesPackage>().FirstOrDefault(x => x.Id == id);
+
+                if (data == null)
+                {
+                    return BadRequest();
+                }
+                data.price = targetValue.price;
+                dataContext.SaveChanges();
+                transaction.Commit();
+                return Ok();
+            }
+        }
     }
 
 }
