@@ -1,5 +1,7 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using SignYourYard.Data;
+using SignYourYard.Data.Entities;
 using SignYourYard.Features.Inventory;
 using SignYourYard.Inventory;
 using System;
@@ -21,8 +23,8 @@ namespace SignYourYard.Controllers
         }
 
         // Endpoint for adding a new order to the database
+        [Authorize(Roles = Roles.Admin)]
         [HttpPost("CreateOrder")]
-
         public ActionResult<CreateOrderDto> AddOrder(CreateOrderDto targerValue)
         {
             var data = dataContext.Set<Order>().Add(new Order
@@ -37,6 +39,7 @@ namespace SignYourYard.Controllers
         }
 
         // Endpoint for updating an order to the database
+        [Authorize(Roles = Roles.Admin)]
         [HttpPut("OrderUpdate")]
 
         public ActionResult<UpdateOrderDto> ChangeOrder(int signId, UpdateOrderDto targetValue)
@@ -57,6 +60,7 @@ namespace SignYourYard.Controllers
             return Ok();
         }
 
+        [Authorize(Roles = Roles.Admin)]
         [HttpGet("OrderInfo")]
 
         public ActionResult<OrderInfoDto> OrderInfo(int signId)
@@ -79,6 +83,7 @@ namespace SignYourYard.Controllers
             }
         }
 
+        [Authorize(Roles = Roles.Admin)]
         [HttpDelete("{Id:int}")]
 
         public async Task<ActionResult<CancelOrderDto>> CancelOrder(int Id)

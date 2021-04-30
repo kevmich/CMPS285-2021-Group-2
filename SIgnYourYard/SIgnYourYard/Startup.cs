@@ -36,28 +36,29 @@ namespace SIgnYourYard
             services.AddDbContext<DataContext>(options=>
                 options.UseSqlServer(Configuration.GetConnectionString("DataContext")));
 
-            services.ConfigureApplicationCookie(OptionsBuilderConfigurationExtensions =>
-           {
-               OptionsBuilderConfigurationExtensions.Events.OnRedirectToAccessDenied = context =>
-               {
-                   context.Response.StatusCode = 403;
-                   return Task.CompletedTask;
-               };
-               OptionsBuilderConfigurationExtensions.Events.OnRedirectToLogin = context =>
-               {
-                   context.Response.StatusCode = 401;
-                   return Task.CompletedTask;
-               };
-           }
-            );
+            services.AddIdentity<User, Role>()
+            .AddEntityFrameworkStores<DataContext>();
 
             services.AddSpaStaticFiles(configuration =>
             {
                 configuration.RootPath = "Restart/my-app2/build";
             });
 
-            services.AddIdentity<User, Role>()
-                .AddEntityFrameworkStores<DataContext>();
+
+            services.ConfigureApplicationCookie(options =>
+            {
+                options.Events.OnRedirectToAccessDenied = context =>
+                {
+                    context.Response.StatusCode = 403;
+                    return Task.CompletedTask;
+                };
+                options.Events.OnRedirectToLogin = context =>
+                {
+                    context.Response.StatusCode = 401;
+                    return Task.CompletedTask;
+                };
+            });
+
 
             services.AddSwaggerGen();
 
@@ -136,7 +137,7 @@ namespace SIgnYourYard
                     return;
                 }
 
-                await CreateUser(userManager, "admin@admin.com", Roles.Admin);
+                await CreateUser(userManager, "admin", Roles.Admin);
             }
         }
 

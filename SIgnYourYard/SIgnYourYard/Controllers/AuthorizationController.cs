@@ -33,7 +33,6 @@ namespace SignYourYard.Controllers
         }
 
         // Login authentication
-        // High volume of space magic, make sure to google more of this
 
         private static Expression<Func<User, UserDto>> mapper()
         {
@@ -44,9 +43,7 @@ namespace SignYourYard.Controllers
             };
         }
 
-
         [HttpPost("login")]
-        // [Authorize(Roles = Roles.Admin)] 
         public async Task<ActionResult> LoginAsync(LoginDto dto)
         {
             var user = await userManager.FindByNameAsync(dto.username);
@@ -74,8 +71,8 @@ namespace SignYourYard.Controllers
             }); ;
         }
 
-        [HttpPost("Create")]
         [Authorize(Roles = Roles.Admin)]
+        [HttpPost("Create")]
         public async Task<ActionResult> Create(CreateUserDto dto)
         {
             var user = new User
@@ -126,7 +123,10 @@ namespace SignYourYard.Controllers
             {
                 return BadRequest();
             }
-            return Ok(temp);
+
+            UserDto response = new UserDto();
+            response.username = temp.username;
+            return Ok(response);
         }
 
         [HttpPost("Logout")]
