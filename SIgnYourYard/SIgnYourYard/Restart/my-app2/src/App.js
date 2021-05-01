@@ -1,4 +1,5 @@
 import './App.css';
+import './Gallery.css';
 import React, { useState, useEffect } from 'react';
 import Information from './components/Information';
 import Loginform from './components/Loginform';
