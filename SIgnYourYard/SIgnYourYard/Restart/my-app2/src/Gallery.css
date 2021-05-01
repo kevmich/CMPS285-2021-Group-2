@@ -1,7 +1,5 @@
 .Carousel1 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 960px;
-    height: 720px; 
+    margin-right: 300px;
+    width: 800px;
+    height: 600px;
 }

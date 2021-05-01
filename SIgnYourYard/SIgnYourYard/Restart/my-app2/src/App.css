@@ -53,6 +53,13 @@ input, button {
 
 /* Home */
 
+.extendhome {
+  padding-top: 50px;
+  margin-right: 230px;
+  margin-left: 230px;
+  line-height: 30px;
+}
+
 .SYY {
   padding-top: 25px;
   padding-bottom: 30px;
