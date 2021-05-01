@@ -21,7 +21,7 @@ namespace SignYourYard.Controllers
         private readonly DataContext dataContext;
         private readonly UserManager<User> userManager;
 
-        public SignController( DataContext dataContext, UserManager<User> userManager)
+        public SignController(DataContext dataContext, UserManager<User> userManager)
         {
             this.dataContext = dataContext;
             this.userManager = userManager;
@@ -30,13 +30,13 @@ namespace SignYourYard.Controllers
         // Endpoint for adding a new sign to the database
         [Authorize(Roles = Roles.Admin)]
         [HttpPost("CreateSign")]
-        public ActionResult<CreateSignDto> AddSign( CreateSignDto targetValue )
+        public ActionResult<CreateSignDto> AddSign(CreateSignDto targetValue)
         {
             using (var transaction = dataContext.Database.BeginTransaction())
             {
                 string[] colorOptions = { "red", "green", "yellow", "blue", "black", "sparkly gold", "sparkly pink", "teal", "orange" };
                 String checkedColor = "";
-                for ( int i = 0; i< colorOptions.Length; i++)
+                for (int i = 0; i < colorOptions.Length; i++)
                 {
                     if (targetValue.color.ToLower().Equals(colorOptions[i]))
                     {
@@ -74,16 +74,16 @@ namespace SignYourYard.Controllers
                     data.content = targetValue.content;
                     data.stock = targetValue.stock;
                 };
-            dataContext.SaveChanges();
-            transaction.Commit();
-            return Ok();
+                dataContext.SaveChanges();
+                transaction.Commit();
+                return Ok();
             }
         }
 
         // Endpoint for getting sign info
         [Authorize(Roles = Roles.Admin)]
         [HttpGet("GetSignStock")]
-        public ActionResult<SignStockDto> GetSignStock( int signId )
+        public ActionResult<SignStockDto> GetSignStock(int signId)
         {
             using (var transaction = dataContext.Database.BeginTransaction())
             {
@@ -105,13 +105,13 @@ namespace SignYourYard.Controllers
 
         [Authorize(Roles = Roles.Admin)]
         [HttpPut("UpdateSignStock")]
-        public ActionResult<SignStockDto> UpdateSignStockDto( int signId, SignStockDto targetValue)
+        public ActionResult<SignStockDto> UpdateSignStockDto(int signId, SignStockDto targetValue)
         {
             using (var transaction = dataContext.Database.BeginTransaction())
             {
                 var data = dataContext.Set<Sign>().FirstOrDefault(x => x.Id == signId);
 
-                if( data == null)
+                if (data == null)
                 {
                     return BadRequest();
                 };
@@ -132,7 +132,7 @@ namespace SignYourYard.Controllers
                 AllStockDto response = new AllStockDto();
                 var data = dataContext.Set<Sign>().FirstOrDefault(x => x.Id == i);
 
-                while( data != null)
+                while (data != null)
                 {
                     i++;
                     data = dataContext.Set<Sign>().FirstOrDefault(x => x.Id == i);
@@ -142,7 +142,7 @@ namespace SignYourYard.Controllers
                 i = 1;
                 data = dataContext.Set<Sign>().FirstOrDefault(x => x.Id == i);
 
-                while ( data != null)
+                while (data != null)
                 {
                     allStock[i - 1] = data.stock;
                     i++;

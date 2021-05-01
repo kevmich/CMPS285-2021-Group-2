@@ -137,7 +137,7 @@ namespace SIgnYourYard
                     return;
                 }
 
-                await CreateUser(userManager, "admin", Roles.Admin);
+                await CreateUser(userManager, "admin@admin.com", Roles.Admin);
             }
         }
 
