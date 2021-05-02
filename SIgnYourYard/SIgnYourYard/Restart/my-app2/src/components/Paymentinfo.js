@@ -105,7 +105,7 @@ class PaymentInfo extends Component {
                     </div>
                 </div>
             </div>
-            {(this.isLogged === "true") ? (
+            {(this.isLoggedIn === "true") ? (
                 <PriceAdjust/>
             ) : ""}
         </div>
