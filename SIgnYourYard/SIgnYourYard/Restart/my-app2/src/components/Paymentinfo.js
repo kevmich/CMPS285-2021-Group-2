@@ -58,6 +58,7 @@ class PaymentInfo extends Component {
                             <div>
                                 <p className= "purple">Prairieville</p>
                                 <p className= "purple">Gonzales</p>
+                                <p className= "purple">Maurepas</p>
                             </div>
                         </div>
                     </div>
