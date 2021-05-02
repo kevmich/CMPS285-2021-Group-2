@@ -7,7 +7,7 @@ import PriceAdjust from "./PriceAdjust";
 class PaymentInfo extends Component {
     constructor(props) {
         super(props);
-        this.state = {
+        this.state = { prices:[],
             isLoggedIn: false
         }
     }
@@ -18,7 +18,9 @@ class PaymentInfo extends Component {
                 this.setState({isLoggedIn: true})
             else(this.setState({isLoggedIn: false}))
         })
-
+        axios.get('/api/salesPackage/GetSalesPackageInfo?id=1').then(response =>{
+            this.setState({prices:response.data.prices})
+        })
     }
 
     render(){
@@ -88,16 +90,16 @@ class PaymentInfo extends Component {
                         <div>
                         <div className="pricing">
                             <p className="samecolorb">l</p>
-                            <p className= "gold">$95</p>
+                            <p className= "gold">${this.state.prices[0]}</p>
                             <p className="samecolorb">l</p>
                             <p className="samecolorb">l</p>
-                            <p className= "purple">$10</p>
+                            <p className= "purple">${this.state.prices[1]}</p>
                             <p className="samecolorb">m</p>
                             <p className="samecolorb">l</p>
-                            <p className= "gold">$25</p>
+                            <p className= "gold">${this.state.prices[2]}</p>
                             <p className="samecolorb">a</p>
                             <p className="samecolorb">l</p>
-                            <p className= "purple">$10-$25</p>
+                            <p className= "purple">${this.state.prices[3]}</p>
                             <p className="samecolorb">l</p>
                         </div>
                     </div>

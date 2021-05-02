@@ -26,3 +26,49 @@
 		</div>
 	</form>
 </div>
+
+class PriceAdjust extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            price1: 0,
+            price2: 0,
+            price3: 0,
+            price4: 0
+        }
+    }
+
+submitHandler1 = e => {
+    e.preventDefault();
+    console.log("details")
+    this.submitPrices();
+}
+
+submitPrices = () => {
+    axios.put('/api/salesPackage/UpdateSalesPackage',
+        )
+        .then(response => {
+        })
+}
+
+render(){
+    return(
+        <div className= "extend">
+            <form className="gradient" onSubmit={this.submitHandler1}>
+                <div className="buffer">
+                    <div className="form-inner">
+                        <a className= "title">Price Adjustment:</a>
+                        <div className= "form-group">
+                            <p>Sign Your Yard Package (ex: $95): </p>
+                            <input type="price" onChange={this.submitPrices(this.state.price1)}/>
+                        </div>
+                        <input type="submit"/>
+                        <p>{}</p>
+                    </div>
+                </div>
+            </form>
+        </div>
+    );
+}}
+
+export default PriceAdjust
