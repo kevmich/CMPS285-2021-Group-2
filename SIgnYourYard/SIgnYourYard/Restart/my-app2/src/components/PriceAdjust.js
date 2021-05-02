@@ -1,4 +1,4 @@
-import React, { useState, Component } from 'react'
+import React, {useState, Component, useEffect} from 'react'
 import {Button} from "reactstrap";
 import axios from 'axios';
 
@@ -44,39 +44,50 @@ function PriceAdjust() {
             price: details.price4
           })
       }
+
     
         return (
-            <div className= "extend">
-                <div className="buffer">
-                    <div className="form-inner"></div>
+            <div className= "whitespace">
+                <div className="gradient">
+                    <div className= "bufferlog">
+                        <h1 className= "paytitle">Price Adjustment:</h1>
                      <form onSubmit={submitHandler1}>
-                      <label>
-                        Price:
-                        <input type="int" onChange={e => setDetails({...details, price1: e.target.value})} />
-                    </label>
-                    <input type="submit" value="Submit" />
-                   </form>
-                   <form onSubmit={submitHandler2}>
-                      <label>
-                        Price:
-                        <input type="int" onChange={e => setDetails({...details, price2: e.target.value})} />
-                    </label>
-                    <input type="submit" value="Submit" />
-                   </form>
+                             <div className= "form-inner2">
+                                 <div className= "form-group">
+                                     <label>Sign Your Yard Package:</label>
+                                     <input type="int" onChange={e => setDetails({...details, price1: e.target.value})} />
+                                 </div>
+                                 <input type="submit" value="Submit" />
+                             </div>
+                     </form>
+                    <form onSubmit={submitHandler2}>
+                        <div className= "form-inner2">
+                            <div className= "form-group">
+                                <label>Extra Characters:</label>
+                                <input type="int" onChange={e => setDetails({...details, price2: e.target.value})} />
+                            </div>
+                            <input type="submit" value="Submit" />
+                        </div>
+                    </form>
                    <form onSubmit={submitHandler3}>
-                      <label>
-                        Price:
-                        <input type="int" onChange={e => setDetails({...details, price3: e.target.value})} />
-                    </label>
-                    <input type="submit" value="Submit" />
+                       <div className= "form-inner2">
+                           <div className= "form-group">
+                               <label>Extra Day:</label>
+                               <input type="int" onChange={e => setDetails({...details, price3: e.target.value})} />
+                           </div>
+                           <input type="submit" value="Submit" />
+                       </div>
                    </form>
                    <form onSubmit={submitHandler4}>
-                      <label>
-                        Price:
-                        <input type="int" onChange={e => setDetails({...details, price4: e.target.value})} />
-                    </label>
-                    <input type="submit" value="Submit" />
+                       <div className= "form-inner2">
+                           <div className= "form-group">
+                               <label>Travel Fee:</label>
+                               <input type="int" onChange={e => setDetails({...details, price4: e.target.value})} />
+                           </div>
+                           <input type="submit" value="Submit" />
+                       </div>
                    </form>
+                    </div>
                 </div>
             </div>
         );
