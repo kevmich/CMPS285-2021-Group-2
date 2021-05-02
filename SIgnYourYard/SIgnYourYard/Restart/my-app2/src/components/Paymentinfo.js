@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import louisianaServiceAreas from '../Pictures/louisianaServiceAreas.jpg'
+import louisianaServiceAreas from '../Pictures/louisianaServiceAreasTwo.jpg'
 import axios from 'axios'
 import PriceAdjust from "./PriceAdjust";
 
