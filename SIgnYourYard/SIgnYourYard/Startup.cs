@@ -15,6 +15,7 @@ using SignYourYard.Data;
 using Microsoft.OpenApi.Models;
 using SignYourYard.Data.Entities;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.SpaServices.ReactDevelopmentServer;
 
 namespace SIgnYourYard
 {
@@ -36,12 +37,31 @@ namespace SIgnYourYard
                 options.UseSqlServer(Configuration.GetConnectionString("DataContext")));
 
             services.AddIdentity<User, Role>()
-                .AddEntityFrameworkStores<DataContext>();
+            .AddEntityFrameworkStores<DataContext>();
 
-            services.AddSwaggerGen(c =>
+            services.AddSpaStaticFiles(configuration =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "API", Version = "v1" });
+                configuration.RootPath = "Restart/my-app2/build";
             });
+
+
+            services.ConfigureApplicationCookie(options =>
+            {
+                options.Events.OnRedirectToAccessDenied = context =>
+                {
+                    context.Response.StatusCode = 403;
+                    return Task.CompletedTask;
+                };
+                options.Events.OnRedirectToLogin = context =>
+                {
+                    context.Response.StatusCode = 401;
+                    return Task.CompletedTask;
+                };
+            });
+
+
+            services.AddSwaggerGen();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -65,13 +85,29 @@ namespace SIgnYourYard
 
             app.UseHttpsRedirection();
 
+            app.UseStaticFiles();
+
             app.UseRouting();
 
+            app.UseSpaStaticFiles();
+
             app.UseAuthorization();
+
+            app.UseAuthentication();
 
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
+            });
+
+            app.UseSpa(spa =>
+            {
+                spa.Options.SourcePath = "Restart/my-app2";
+
+                if (env.IsDevelopment())
+                {
+                    spa.UseReactDevelopmentServer(npmScript: "start");
+                }
             });
         }
 
@@ -101,7 +137,7 @@ namespace SIgnYourYard
                     return;
                 }
 
-                await CreateUser(userManager, "admin", Roles.Admin);
+                await CreateUser(userManager, "admin@admin.com", Roles.Admin);
             }
         }
 

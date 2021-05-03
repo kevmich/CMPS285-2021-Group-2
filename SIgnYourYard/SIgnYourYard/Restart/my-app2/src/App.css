@@ -1,7 +1,3 @@
-/*App*/
-
-/* font-family: montserrat, sans-sarif; */
-
 input, button {
   appearance: none;
   background: none;
@@ -9,76 +5,239 @@ input, button {
   outline: none;
 }
 
+/* App */
+
+.App {
+  background: #23333e;
+  min-height: 1000px;
+}
+
+/* Text and Fonts */
+
+.samecolorb {
+  color: #23333e
+}
+
+.SYYt {
+  padding-top: 20px;
+  padding-bottom: 25px;
+  font-family: 'Cinzel', serif;
+  font-size: xx-large;
+  color: rgb(221, 202, 39);
+  text-align: center;
+}
+
+.whitetext {
+  color: white;
+}
+
+.title {
+  font-family: 'Sarabun', sans-serif;
+  color: rgb(221, 202, 39);
+  text-align: center;
+  font-size: 40px;
+
+}
+
+.label {
+  padding-top: 20px;
+  font-family: 'Sarabun', sans-serif;
+  font-size: 30px;
+  color: rgb(161, 92, 250);
+}
+
+.body {
+  font-family: 'PT Serif', serif;
+  color: white;
+}
+
+/* Home */
+
+.extendhome {
+  padding-top: 50px;
+  margin-right: 230px;
+  margin-left: 230px;
+  line-height: 30px;
+}
+
+.SYY {
+  padding-top: 25px;
+  padding-bottom: 30px;
+  font-family: 'Cinzel', serif;
+  font-size: xxx-large;
+  color: rgb(221, 202, 39);
+  text-align: center;
+}
+
 /* Navbar */
 
-nav {
+.padTop {
+  padding-top: 10px;
+}
+
+.syygr {
+  background-image: linear-gradient(to bottom right, rgb(221, 202, 39), rgb(161, 92, 250));
+  text-align: center;
+  justify-content: center;
+  padding-top: 5px;
+  padding-right: 5px;
+  padding-left: 5px;
+  padding-bottom: 5px;
   border-radius: 4px;
-  background: rgb(111, 31, 216);
+}
+
+.samecolorbg {
+  background: #23333e;
+  border-radius: 4px;
+  padding: 5px;
+}
+
+.purpleNav {
+  color: rgb(161, 92, 250);
+  font-family: 'Cinzel', serif;
+}
+
+.goldNav {
+  color: white;
+  font-family: 'Cinzel', serif;
+}
+
+.nav {
+  background: rgb(200, 208, 215);
   display: flex;
   min-height: 10vh;
-  color: rgb(224, 195, 31);
-  align-items: center;
+  color: rgb(221, 202, 39);
   justify-content: space-around;
+  align-items: center;
 }
+
 
 .navlinks {
-  width: 50%;
   display: flex;
-  justify-content: space-around;
-  align-items: center;
   list-style: none;
-}
- 
-/* Home Page */
-
-.home h1{
-  font-family: 'Clicker Script', cursive;
+  justify-content: space-around;
+  margin-top: 10px;
 }
 
-.images{
-width: 200px;
-height: 200px;
-  }
+.navlinks2 {
+  display: flex;
+  list-style: none;
+  justify-content: space-around;
+}
+
+.navlink {
+  padding: 20px;
+}
 
 /* Page Layout */
 
+.margins{
+  margin-left: 200px;
+  margin-right: 200px;
+}
+
+.extend {
+  padding-top: 50px;
+  margin-left: 400px;
+  margin-right: 400px;
+  line-height: 30px;
+}
+
 .buffer{
   background-color: rgb(230, 228, 228);
-  padding: 20px;
   border: rgb(230, 228, 228);
   border-radius: 4px;
 }
 
 .gradient{
-  background-image: linear-gradient(to bottom right, rgb(224, 195, 31), rgb(111, 31, 216));
+  background: rgb(139, 163, 164);
   display: block;
   position: relative;
-  padding: 10px;
+  padding: 5px;
   border-radius: 4px;
   top: 50px;
 }
 
-.label {
-  font-family: 'Clicker Script', cursive;
-  font-size: xx-large;
-  color: rgb(111, 31, 216);
+.gradients{
+  background-image: linear-gradient(to bottom right, rgb(221, 202, 39), rgb(161, 92, 250));
+  min-height: 600px;
+  text-align: center;
+  font-size: 200px;
 }
 
-.title {
-  font-family: 'Lora', serif;
-  color: rgb(235, 186, 26);
+.green {
+  color: white;
+}
+
+.title1 {
+  color: rgb(221, 202, 39);
   font-size: 30px;
+  text-align: center;
 }
 
 .gold {
-  color:rgb(235, 186, 26);
+  padding-top: 10px;
+  color: rgb(221, 202, 39);
+  font-family: 'PT Serif', serif;
 }
 
 .purple {
-  color: rgb(111, 31, 216);
+  padding-top: 10px;
+  color: rgb(161, 92, 250);
+  font-family: 'PT Serif', serif;
 }
 
 /* Login Form */
+
+.logmarg {
+  margin-right: 80px;
+  margin-left: 80px;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.samecolorbglog {
+  background: #23333e;
+  border-radius: 4px;
+  padding: 5px;
+}
+
+.syygrlog {
+  background-image: linear-gradient(to bottom right, rgb(221, 202, 39), rgb(161, 92, 250));
+  text-align: center;
+  justify-content: center;
+  padding-top: 5px;
+  padding-right: 5px;
+  padding-left: 5px;
+  padding-bottom: 5px;
+  border-radius: 4px;
+}
+
+.error {
+  color: red;
+}
+
+.bufferlog{
+  background-color: rgb(161, 166, 167);
+  border: rgb(230, 228, 228);
+  border-radius: 4px;
+}
+
+.logtitle {
+  font-family: 'Lato', sans-serif;
+  color: rgb(255, 255, 255);
+  font-size: 41px;
+  text-align: center;
+}
+
+.whitespace {
+  padding-top: 10px;
+  height: 75%;
+  width: 50%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto
+}
 
 form {
   display: block;
@@ -114,7 +273,7 @@ form .form-inner .form-group{
 }
 
 .form-inner .form-group:focus-within label{
-  color: rgb(111, 31, 216);
+  color: rgb(161, 92, 250);
 }
 
 form .form-inner .form-group input {
@@ -134,7 +293,7 @@ form .form-inner input[type="submit"] {
   display: inline-block;
   padding: 10px 15px;
   border-radius: 8px;
-  background-image: linear-gradient(to right, rgb(111, 31, 216),rgb(111, 31, 216), rgb(224, 195, 31));
+  background-image: linear-gradient(to right, rgb(161, 92, 250), rgb(161, 92, 250), rgb(221, 202, 39));
   background-size: 200%;
   background-position: 0%;
   transition: 0.4s;
@@ -149,49 +308,188 @@ form .form-inner input[type="submit"]:hover {
 
 /* Inventory Page */
 
-.counters{
-  min-height: 400px;
-  display: flex;
-  justify-content: space-around;
+.invmarg {
+  margin-left: 150px;
+  margin-right: 150px;
 }
 
-.amount{
-  font-size: x-large;
+.invmarg button {
+  color: white;
+}
+
+.invsidebyside {
+  display: flex;
+  justify-content: space-around;
+  padding-top: 30px;
+}
+
+.inventory {
+  text-align: center;
+}
+
+.padding {
+  padding-top: 30px;
+}
+
+.stonksl {
+  padding-bottom: 31px;
+}
+
+.stonks {
+  padding-top: 25px;
+  padding-bottom: 20px;
+}
+
+.latitude-Letter {
+  color: white;
+  padding-top: 65px;
+}
+
+.latitude-Red {
+  color: red;
+}
+
+.latitude-Orange {
+  color: orange;
+}
+
+.latitude-Yellow {
+  color: yellow;
+}
+
+.latitude-Green {
+  color: green;
+}
+
+.latitude-Blue {
+  color: blue;
+}
+
+.latitude-Purple {
+  color: purple;
 }
 
 /* Payment Info Page */
+
+.paymarg {
+  padding-top: 35px;
+  margin-right: 80px;
+  margin-left: 80px;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.payGradient{
+  background: rgb(139, 163, 164);
+  display: block;
+  position: relative;
+  padding: 5px;
+  border-radius: 4px;
+  justify-content: center;
+  align-items: center;
+}
+
+.iminfowhitespace {
+  padding-bottom: 20px;
+  display: block;
+  margin-left: 400px;
+  margin-right: 400px;
+}
+
+.payImage {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+
+.topPad {
+  padding-top: 30px;
+}
 
 .sidebyside {
   display: flex;
   justify-content: space-around;
 }
 
-.samecolor {
-  color:rgb(230, 228, 228)
+.samecolors {
+color: rgb(161, 166, 167);
 }
 
-/* Payment History Page */
-
-.ph {
+.infowhitespace {
+  padding-bottom: 60px;
+  width: 50%;
   display: block;
-  position: center;
-  align-items: center;
+  margin-left: auto;
+  margin-right: auto
 }
 
-.form-ph {
-  position: relative;
-  display: block;
-  padding: 10px;
-  z-index: 2;
+.buffer2 {
+  background: rgb(174, 181, 188);
+  border-radius: 2px;
 }
 
 /* Price Adjustment Page */
 
-.priceIn input[type="submit"] {
-  display: inline-block;
+.paymarg {
+  padding-top: 80px;
+  padding-bottom: 50px;
+  margin-right: 120px;
+  margin-left: 120px;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.form-inner2 {
+  position: relative;
+  display: block;
+  padding-left: 155px;
+  padding-bottom: 30px;
+  z-index: 2;
+}
+
+form .form-inner2 h2{
+  color: rgb(0, 0, 0);
+  font-size: 28px;
+  font-weight: 500;
+  margin-bottom: 30px;
+}
+
+form .form-inner2 .form-group{
+  display: block;
+  width: 300px;
+  margin-bottom: 15px;
+}
+
+.form-inner2 .form-group label{
+  display: block;
+  color: rgb(0, 0, 0);
+  font-size: 12px;
+  margin-bottom: 5px;
+  transition: 0.5s;
+}
+
+.form-inner2 .form-group:focus-within label{
+  color: rgb(161, 92, 250);
+}
+
+form .form-inner2 .form-group input {
+  display:  block;
+  width: 100%;
   padding: 10px 15px;
+  background-color: rgb(192, 192, 192);
   border-radius: 8px;
-  background-image: linear-gradient(to right, rgb(111, 31, 216),rgb(111, 31, 216), rgb(224, 195, 31));
+  transition: 0.5s;
+}
+
+form .form-inner2 .form-group input:focus {
+  box-shadow: 0px 0px 3px black;
+}
+
+form .form-inner2 input[type="submit"] {
+  display: inline-block;
+  padding: 5px 7px;
+  border-radius: 8px;
+  background-image: linear-gradient(to right, rgb(161, 92, 250), rgb(161, 92, 250), rgb(221, 202, 39));
   background-size: 200%;
   background-position: 0%;
   transition: 0.4s;
@@ -200,7 +498,43 @@ form .form-inner input[type="submit"]:hover {
   cursor: pointer;
 }
 
-.priceIn input[type="submit"]:hover {
+form .form-inner2 input[type="submit"]:hover {
   background-position: 100% 0%;
 }
 
+.paytitle {
+  padding-top: 90px;
+  padding-bottom: 50px;
+  font-family: 'Lato', sans-serif;
+  color: rgb(161, 92, 250);
+  font-size: 40px;
+  text-align: center;
+}
+
+/* Contact Us Page */
+
+.social-container {
+  justify-content: center;
+padding: 10px 110px;
+}
+a.icon {
+margin: 0 1rem;
+  transition: transform 1s;
+  display: inline-block;
+}
+
+a.icon:hover {
+  transform: translateY(-4px);
+}
+
+a.fb {
+  color: #4795de;
+}
+
+a.insta {
+  padding-left: 3px;
+  padding-right: 3px;
+  border-radius: 6px;
+  background-image: linear-gradient(to top right, yellow, purple, mediumpurple);
+  color: white;
+}

@@ -10,8 +10,8 @@ using SignYourYard.Data;
 namespace SignYourYard.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20210322215245_iit")]
-    partial class iit
+    [Migration("20210502025554_init")]
+    partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -216,6 +216,24 @@ namespace SignYourYard.Migrations
                     b.HasIndex("RoleId");
 
                     b.ToTable("AspNetUserRoles");
+                });
+
+            modelBuilder.Entity("SignYourYard.Data.Inventory.SalesPackage", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<double>("price")
+                        .HasColumnType("float");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("SalesPackages");
                 });
 
             modelBuilder.Entity("SignYourYard.Inventory.Order", b =>

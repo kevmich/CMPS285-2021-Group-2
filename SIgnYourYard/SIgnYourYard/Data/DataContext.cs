@@ -1,7 +1,10 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using SignYourYard.Data.Entities;
+using SignYourYard.Data.Inventory;
+using SignYourYard.Features.Inventory;
 using SignYourYard.Inventory;
 using System;
 using System.Collections.Generic;
@@ -17,6 +20,8 @@ namespace SignYourYard.Data
         }
         public DbSet<Sign> Sign{  get; set; }
         public DbSet<Order> Order { get; set; }
+        public DbSet<SalesPackage> SalesPackages { get; set; }
+
 
 
         // Creates the relationships between a User and a Role
@@ -35,6 +40,11 @@ namespace SignYourYard.Data
             userRoleBuilder.HasOne(x => x.User )
                 .WithMany(x => x.Roles)
                 .HasForeignKey(x => x.UserId);
+        }
+
+        internal Task<ActionResult<CancelOrderDto>> CancelOrder(int id)
+        {
+            throw new NotImplementedException();
         }
     }
 }
