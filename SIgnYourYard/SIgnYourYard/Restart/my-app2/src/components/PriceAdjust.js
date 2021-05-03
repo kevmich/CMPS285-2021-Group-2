@@ -48,9 +48,15 @@ function PriceAdjust() {
     
         return (
             <div className= "whitespace">
-                <div className="gradient">
                     <div className= "bufferlog">
-                        <h1 className= "paytitle">Price Adjustment:</h1>
+                        <div className= "paymarg">
+                            <div className= "syygrlog">
+                                <div className= "samecolorbglog">
+                                    <h1 className= "logtitle">Price Adjustment</h1>
+                                </div>
+                            </div>
+                        </div>
+
                      <form onSubmit={submitHandler1}>
                              <div className= "form-inner2">
                                  <div className= "form-group">
@@ -88,7 +94,6 @@ function PriceAdjust() {
                        </div>
                    </form>
                     </div>
-                </div>
             </div>
         );
       }

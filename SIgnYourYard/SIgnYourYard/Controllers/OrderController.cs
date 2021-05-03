@@ -23,7 +23,6 @@ namespace SignYourYard.Controllers
         }
 
         // Endpoint for adding a new order to the database
-        [Authorize(Roles = Roles.Admin)]
         [HttpPost("CreateOrder")]
         public ActionResult<CreateOrderDto> AddOrder(CreateOrderDto targerValue)
         {
@@ -39,7 +38,6 @@ namespace SignYourYard.Controllers
         }
 
         // Endpoint for updating an order to the database
-        [Authorize(Roles = Roles.Admin)]
         [HttpPut("OrderUpdate")]
 
         public ActionResult<UpdateOrderDto> ChangeOrder(int signId, UpdateOrderDto targetValue)
@@ -60,7 +58,6 @@ namespace SignYourYard.Controllers
             return Ok();
         }
 
-        [Authorize(Roles = Roles.Admin)]
         [HttpGet("OrderInfo")]
 
         public ActionResult<OrderInfoDto> OrderInfo(int signId)
@@ -83,7 +80,6 @@ namespace SignYourYard.Controllers
             }
         }
 
-        [Authorize(Roles = Roles.Admin)]
         [HttpDelete("{Id:int}")]
 
         public async Task<ActionResult<CancelOrderDto>> CancelOrder(int Id)

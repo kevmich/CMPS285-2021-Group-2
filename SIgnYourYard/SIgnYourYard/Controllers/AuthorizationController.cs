@@ -71,7 +71,6 @@ namespace SignYourYard.Controllers
             }); ;
         }
 
-        [Authorize(Roles = Roles.Admin)]
         [HttpPost("Create")]
         public async Task<ActionResult> Create(CreateUserDto dto)
         {

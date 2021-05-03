@@ -189,6 +189,30 @@ input, button {
 
 /* Login Form */
 
+.logmarg {
+  margin-right: 80px;
+  margin-left: 80px;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.samecolorbglog {
+  background: #23333e;
+  border-radius: 4px;
+  padding: 5px;
+}
+
+.syygrlog {
+  background-image: linear-gradient(to bottom right, rgb(221, 202, 39), rgb(161, 92, 250));
+  text-align: center;
+  justify-content: center;
+  padding-top: 5px;
+  padding-right: 5px;
+  padding-left: 5px;
+  padding-bottom: 5px;
+  border-radius: 4px;
+}
+
 .error {
   color: red;
 }
@@ -201,8 +225,8 @@ input, button {
 
 .logtitle {
   font-family: 'Lato', sans-serif;
-  color: rgb(161, 92, 250);
-  font-size: 40px;
+  color: rgb(255, 255, 255);
+  font-size: 41px;
   text-align: center;
 }
 
@@ -347,6 +371,14 @@ form .form-inner input[type="submit"]:hover {
 
 /* Payment Info Page */
 
+.paymarg {
+  padding-top: 35px;
+  margin-right: 80px;
+  margin-left: 80px;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
 .payGradient{
   background: rgb(139, 163, 164);
   display: block;
@@ -397,6 +429,15 @@ color: rgb(161, 166, 167);
 }
 
 /* Price Adjustment Page */
+
+.paymarg {
+  padding-top: 80px;
+  padding-bottom: 50px;
+  margin-right: 120px;
+  margin-left: 120px;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
 
 .form-inner2 {
   position: relative;

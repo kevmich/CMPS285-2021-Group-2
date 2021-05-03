@@ -34,10 +34,16 @@ function Loginform() {
 
     return (
         <div className= "whitespace">
-            <form onSubmit={submitHandler} className= "gradient">
+            <form onSubmit={submitHandler}>
                 <div className= "bufferlog">
                     <div className= "form-inner">
-                        <h1 className= "logtitle">Login</h1>
+                        <div className= "logmarg">
+                            <div className= "syygrlog">
+                                <div className= "samecolorbglog">
+                                    <h1 className= "logtitle">Login</h1>
+                                </div>
+                            </div>
+                        </div>
                         <p className="samecolors">l</p>
                         {(error != "") ? ( <div className="error">{error}</div>) : ""}
                         <div className="form-group">
